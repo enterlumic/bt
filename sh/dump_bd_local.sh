@@ -1,0 +1,2 @@
+mysql -u u733136234_console -pF4I6^\$BDC-aEonn9 u733136234_console -e "TRUNCATE tbl_debug";mysqldump --routines --triggers -u u733136234_console -pF4I6^\$BDC-aEonn9 u733136234_console > /var/www/html/console/bd.sql;grep -wrl 'DEFINER=`u733136234_console`@`%`' /var/www/html/console/bd.sql | xargs sed -i 's/DEFINER=`u733136234_console`@`%`//g';
+grep -wrl 'DEFINER=`adminBD`@`%`' /var/www/html/console/bd.sql | xargs sed -i 's/DEFINER=`adminBD`@`%`//g';

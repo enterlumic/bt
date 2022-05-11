@@ -1,0 +1,1 @@
+mysql -u u733136234_console -pF4I6^\$BDC-aEonn9 u733136234_console -e "drop database u733136234_console; create database u733136234_console; use u733136234_console; source /var/www/html/console/bd.sql;"

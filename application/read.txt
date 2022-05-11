@@ -1,0 +1,412 @@
+ 
+ETKT                CREDIT CARD CHARGE FORM
+DELTA AIR LINES INC                DHN/MTY       VILLATOURS APODAC
+                                   01AUG19       SAN NICOLAS D  MX
+                                                 86515973    GTKYNE/AA
+CACERES/ARMANDO
+                               DI13/A29
+SIGNATURE X-
+I ACKNOWLEDGE PURCHASE OF TRANSPORTATION RELATED SERVICES AND/OR
+GOODS AND AM AWARE OF APPLICABLE RESTRICTIONS AND/OR PENALTIES
+ASSOCIATED WITH THE PURCHASE AS SHOWN ON THIS RECEIPT
+   
+   
+USD     526.00
+MXN    MXN
+PD       355US
+PD       107AY  CCCAXXXXXXXXXXXX0277  XX/XX     APVL C 319930
+PD        86XF
+MXN      1013A  0011/    006 9591596130 0                                
+   
+                   VILLATOURS APODAC              005001
+ETKT     **AGENT COUPON**              86515973       **ITINERARY**
+DELTA AIR LINES INC          1 OF 1   GTKYNE/AA    DL3899H DHNATL 01AUG
+CACERES/ARMANDO                 TCXIGNUMX             HNNA0NMM/C940K
+                               DI13/A29  01AUG19  XDL 753H ATLMTY 01AUG
+                                                      HNNA0NMM/C940K
+   
+DHN DL X/ATL DL MTY526.24NUC526.24END ROE1.00 XFA
+TL4.5
+   
+   
+   
+USD     526.00 MXN    MXN     EXCH/0069591527583
+PD       355US CAXXXXXXXXXXXX0277 C319930 XX/XX
+PD       107AY FCI02
+PD        86XF ORIG ISS/0069591527583MEX30JUL19
+MXN      1013A
+         006 9591596130 0 PRI  FFVV
+0011/                         MXNEX         0      1013 0000          0
+ 
+ENDORSEMENT/RESTRICTION
+RFC DAL 870401 MGA
+WAIVER 19FJY0 NO END NO REF CHGS FEE
+                                                                                 
+DQB*31JUL
+DQB*                                                           
+DI13  31JUL19     TICKETING REPORT            VILLATOURS APODAC
+TICKET           COMMISSION   AGENT                  TICKET    
+NUMBER             AMOUNT      SINE TIME      CURR   AMOUNT    
+PNR-FQVKNB ZAMBRANO GOMEZ/ELISA MARIA       ETR                
+0019591596129             0    A29  1720  AX   MXN      7059   
+PNR-FQVKNB ZAMBRANO GOMEZ/ELISA MARIA       ETR                
+0069591596128             0    A29  1720  AX   MXN     10345   
+PNR-WPYCLD GOMEZ/ARIEL ESAUL                ETR                
+1399591596127                  A86  1720  EX   MXN       622 A 
+PNR-HGCMQM GARZA PAEZ/GILBERTO              ETR                
+0019591596126             0    A29  1716  AX   MXN      7059   
+PNR-HGCMQM GARZA PAEZ/GILBERTO              ETR                
+0069591596125             0    A29  1715  AX   MXN     10921   
+PNR-KDITCQ GOMEZ FLORES/MANUEL IGNACIO      ETR                
+0019591596124             0    A29  1710  AX   MXN      7059   
+PNR-KDITCQ GOMEZ FLORES/MANUEL IGNACIO      ETR                
+0069591596123             0    A29  1709  AX   MXN      9332   
+PNR-LJNTPK SEGURA GONZALEZ/FRANCISCO ISM    ETR                
+0019591596122             0    A29  1705  AX   MXN      7059   
+PNR-LJNTPK SEGURA GONZALEZ/FRANCISCO ISM    ETR                
+0069591596121             0    A29  1705  AX   MXN     10921   
+PNR-QDFCEA BUENO DIAZ/RICARDO               ETR                
+0019591596120             0    A29  1635  AX   MXN     14677   
+PNR-MXLJKZ GARZA AGUIRRE/JORGE LUIS         ETR                
+0019591596119             0    A29  1631  CA   MXN     13594   
+PNR-MXLJKZ CABALLERO SALINAS/MIGUEL ANGE    ETR                
+0019591596118             0    A29  1631  CA   MXN     13594   
+PNR-MXLJKZ GARCIA TREVINO/JOSE CRUZ         ETR                
+0019591596117             0    A29  1631  CA   MXN     13594   
+PNR-LRNURY MURAIRA DE LA GARZA/JOSE ANTO    ETR                
+1399591596116                  A29  1613  EX   MXN      3018 A 
+PNR-VGNWAU LEAL LOZANO/MARIA TERESA         ETR                
+1399591596115           110    A29  1558  AX   MXN     13131   
+PNR-VGNWAU RODRIGUEZ GONZALEZ/LUIS FELIX    ETR                
+1399591596114           110    A29  1558  AX   MXN     13131   
+PNR-BLEUWF LEAL PERALES/HECTOR              ETR                
+1399591596113            33    A70  1531  CA   MXN      4980   
+PNR-MAZXSH VALDEZ GARZA/JOSE OCTAVIANO      ETR                
+0019591596112             0    A29  1457  CA   MXN     17248   
+PNR-HMKZXL GUTIERREZ ELIZONDO/ALFONSO       ETR                
+0019591596111             0    A29  1453  CA   MXN     17248   
+PNR-VYCSWL PAURA/CHRISTIAN TADEO            ETR                
+1399591596110            33    A86  1328  AX   MXN      4980   
+PNR-QQZIUG IZAGUIRRE/MARA                   ETR                
+1399591596109            33    A86  1326  AX   MXN      4980   
+PNR-MLIBUM GUAJARDO TORRES/ARMANDO          ETR                
+1399591596108            50    A70  1112  AX   MXN      6911   
+PNR-LYKXQB GUERRA GARCIA/ERNESTO GERARDO    ETR                
+1399591596107            32    A86  0957  AX   MXN      4586   
+PNR-ZIIDQI SANCHEZ ZAMORA/ADRIANA           ETR                
+1399591596106            33    A70  0951  CA   MXN      4980   
+PNR-BLEUWF LEAL PERALES/HECTOR              ETR                
+1399591596105            33    A70  0937  CA   MXN      4980 V 
+                                                               
+TOTAL DAILY SALES          CASH/CHECK AMT        CREDIT AMT    
+MXN        221029                   85238             135791   
+                                                               
+ 
+DI13.DI13*AVM 0914 01-AUG-2019 507367
+ 
+WV*DT31JUL
+1399591596105     LEAL /H  BLEUWF DI13*A70  1529/31JUL*E       
+ 
+DI13.DI13*AVM 0914 01-AUG-2019 507367
+ 
+DQB*EMD/D31JUL
+DI13  31JUL19           EMD REPORT            VILLATOURS APODAC
+EMD NUMBER       COMMISSION   AGENT                         ACT
+                               SINE TIME      CURR   AMOUNT    
+PNR-WPYCLD GOMEZ/ARIEL ESAUL                EMD                
+1391850079475             0    A86  1720  CC   MXN      1499   
+PNR-VYCSWL PAURA/CHRISTIAN TADEO            EMD                
+1391850066624             0    A86  1329  CC   MXN       149   
+PNR-QQZIUG IZAGUIRRE/MARA                   EMD                
+1391850066623             0    A86  1326  CC   MXN       149   
+                                                               
+TOTAL DAILY SALES          CASH/CHECK AMT         CREDIT AMT   
+MXN           1797                       0                 1797
+ 
+DI13.DI13*AVM 0914 01-AUG-2019 507367
+ 
+ETKT                CREDIT CARD CHARGE FORM
+AEROMEXICO                         MEX/MTY       VILLATOURS APODAC
+                                   01AUG19       SAN NICOLAS D  MX
+                                                 86515973    AYVCBF/AA
+NUNEZ/DALILA SARAHI
+                               DI13/A29
+SIGNATURE X-
+I ACKNOWLEDGE PURCHASE OF TRANSPORTATION RELATED SERVICES AND/OR
+GOODS AND AM AWARE OF APPLICABLE RESTRICTIONS AND/OR PENALTIES
+ASSOCIATED WITH THE PURCHASE AS SHOWN ON THIS RECEIPT
+   
+   
+MXN       2524
+   
+          15YR
+         404MX  AXXXXXXXXXXXX1008  XX/XX        APVL C 132536
+         527XV
+MXN       3470  0011/    139 9591596131 1                                
+   
+                   VILLATOURS APODAC              0000000
+ETKT     **AGENT COUPON**              86515973       **ITINERARY**
+AEROMEXICO                   1 OF 1   AYVCBF/AA    AM 918Y MEXMTY 18AUG
+NUNEZ/DALILA SARAHI             TCXIGNUMX             QLON0QFM/C940K
+                               DI13/A29  01AUG19
+   
+   
+MEX AM MTY Q775 1749MXN2524END
+   
+   
+   
+   
+MXN       2524
+          15YR AXXXXXXXXXXXX1008  C132536 XX/XX
+         404MX FCI02
+         527XV
+MXN       3470
+         139 9591596131 1 PRI  FVVV
+0011/                         MXN           0      2524 0100        946
+ 
+ENDORSEMENT/RESTRICTION
+RFC AME 880912 I89
+NONEND/NONTRANS/ C940K
+                                                                   
+ETKT                CREDIT CARD CHARGE FORM
+AEROMEXICO                         MEX/MTY       VILLATOURS APODAC
+                                   01AUG19       SAN NICOLAS D  MX
+                                                 86515973    AYVCBF/AA
+NUNEZ/DALILA SARAHI
+                               DI13/A29
+SIGNATURE X-
+I ACKNOWLEDGE PURCHASE OF TRANSPORTATION RELATED SERVICES AND/OR
+GOODS AND AM AWARE OF APPLICABLE RESTRICTIONS AND/OR PENALTIES
+ASSOCIATED WITH THE PURCHASE AS SHOWN ON THIS RECEIPT
+   
+   
+MXN       1480
+   
+          15YR
+         237MX  AXXXXXXXXXXXX1008  XX/XX        APVL C 184968
+         527XV
+MXN       2259  0011/    139 9591596132 2                                
+   
+                   VILLATOURS APODAC              0000000
+ETKT     **AGENT COUPON**              86515973       **ITINERARY**
+AEROMEXICO                   1 OF 1   AYVCBF/AA    AM 918N MEXMTY 18AUG
+NUNEZ/DALILA SARAHI             TCXIGNUMX             NLON0QCM/C940K
+                               DI13/A29  01AUG19
+   
+   
+MEX AM MTY Q775 705MXN1480END
+   
+   
+   
+   
+MXN       1480
+          15YR AXXXXXXXXXXXX1008  C184968 XX/XX
+         237MX FCI02
+         527XV
+MXN       2259
+         139 9591596132 2 PRI  FVVV
+0011/                         MXN           0      1480 0100        779
+ 
+ENDORSEMENT/RESTRICTION
+RFC AME 880912 I89
+NONEND/NONTRANS/ C940K
+                                                                   
+                   VILLATOURS APODA               350022      IN
+VILLATOURS APODA      SAN NICOLAS D  MX    31JUL19 AUTH C13923HA3LG3T9
+EXCHANGE AUTHORIZATION                              MEX O MTY 01AUG
+AEROMEXICO                                86515973  TNNN6XCM/C940
+SANCHEZ ZAMORA/ADRIANA                  0011/  FCI0 MTY
+                        ****EXCHANGED TICKETS****
+                        2 139 95915961063
+   
+REVIEW ETKT FOR ENDORSE/RESTRICT/PENALTY
+FPCA FCMTY AM MEX Q775 921AM MTY Q775 921MXN3392END
+   
+   
+   
+   
+MXN         3392
+            35YR
+           543MX           AUTH C13923HA3LG3T9
+          1010XV
+MXN         4980
+ 
+                   VILLATOURS APODAC              350022
+ETKT     **AGENT COUPON**              86515973       **ITINERARY**
+AEROMEXICO                   1 OF 1   ZIIDQI/AA    AM 928T MEXMTY 01AUG
+SANCHEZ ZAMORA/ADRIANA          TCXIGNUMX             TNNN6XCM/C940K
+                               DI13/A70  01AUG19
+   
+   
+MTY AM MEX Q775 921AM MTY Q775 921MXN3392END
+   
+   
+   
+   
+MXN       3392                EXCH/1399591596106
+PD        35YR CASH
+PD       543MX FCI00
+PD      1010XV ORIG ISS/1399591596106MEX31JUL19
+      NO ADC
+         139 9591596133 3 PRI  FVVV
+0011/                         MXNEX         0         0 0000          0
+ 
+ENDORSEMENT/RESTRICTION
+RFC AME 880912 I89
+WAIVER MXRS190801199 MXN3392 NONREFUNDABLE/NONEND/NONTRANS
+                                                                                                       
+                   VILLATOURS APODAC              350022
+ETKT     **AGENT COUPON**              86515973       **ITINERARY**
+AEROMEXICO                   1 OF 1   RTJWOA/AA    AM2142T GDLMTY 05AUG
+SANCHEZ ROJAS/FERNANDO          TCXIGNUMX             TNNN0QCM/C940K
+                               DI13/A70  01AUG19  OAM2009T MTYGDL 09AUG
+                                                      TNNN0QCM/C940K
+   
+GDL AM MTY Q775 908AM GDL Q775 908MXN3366END
+   
+   
+   
+   
+MXN       3366
+          33YR CASH
+         539MX FCI00
+         843XV
+MXN       4781
+         139 9591596134 4 PRI  FFVV
+0011/                         MXN        3366         0 0100       1415
+ 
+ENDORSEMENT/RESTRICTION
+RFC AME 880912 I89
+NONEND/NONTRANS/ C940K
+                                                                   
+ETKT                CREDIT CARD CHARGE FORM
+AEROMEXICO                         MTY/MTY       VILLATOURS APODAC
+                                   01AUG19       SAN NICOLAS D  MX
+                                                 86515973    VUYHCO/AA
+GRAJEDA SEANEZ/ROBERTO
+                               DI13/A70
+SIGNATURE X-
+I ACKNOWLEDGE PURCHASE OF TRANSPORTATION RELATED SERVICES AND/OR
+GOODS AND AM AWARE OF APPLICABLE RESTRICTIONS AND/OR PENALTIES
+ASSOCIATED WITH THE PURCHASE AS SHOWN ON THIS RECEIPT
+   
+   
+MXN       3392
+   
+          35YR
+         543MX  AXXXXXXXXXXXX1007  XX/XX        APVL C 131928
+        1004XV
+MXN       4974  0011/    139 9591596135 5                                
+   
+                   VILLATOURS APODAC              350009
+ETKT     **AGENT COUPON**              86515973       **ITINERARY**
+AEROMEXICO                   1 OF 1   VUYHCO/AA    AM 907T MTYMEX 05AUG
+GRAJEDA SEANEZ/ROBERTO          TCXIGNUMX             TNNN6XCM/C940K
+                               DI13/A70  01AUG19  OAM 928T MEXMTY 05AUG
+                                                      TNNN6XCM/C940K
+   
+MTY AM MEX Q775 921AM MTY Q775 921MXN3392END
+   
+   
+   
+   
+MXN       3392
+          35YR AXXXXXXXXXXXX1007  C131928 XX/XX
+         543MX FCI02
+        1004XV
+MXN       4974
+         139 9591596135 5 PRI  FFVV
+0011/                         MXN           0      3392 0100       1582
+ 
+ENDORSEMENT/RESTRICTION
+RFC AME 880912 I89
+NONEND/NONTRANS/ C940K
+                                                                   
+                   VILLATOURS APODA               350086      IN
+VILLATOURS APODA      SAN NICOLAS D  MX    08AUG18 AUTH C13922C83LG3T9
+EXCHANGE AUTHORIZATION                              MTY   BJX 17AUG
+AEROMEXICO                                86515973  TNNN0QCM/C940
+REEKER/WALTER HUGH                      0011/  FCI2 BJX O MTY 17AUG
+                        ****EXCHANGED TICKETS****   HNNN0QCM/C940
+                        1 139 27440715185 21
+   
+REVIEW ETKT FOR ENDORSE/RESTRICT/PENALTY
+FPAXXXXXXXXXXXX1000EXPXXXXS141642 FCMTY AM BJX Q775
+ 791AM MTY Q775 1301MXN3642END
+   
+   
+   
+MXN         3642
+            33YR
+           583MX           AUTH C13922C83LG3T9
+           836XV
+MXN         5094
+ 
+ETKT                CREDIT CARD CHARGE FORM
+AEROMEXICO                         MEX/MEX       VILLATOURS APODAC
+                                   01AUG19       SAN NICOLAS D  MX
+                                                 86515973    ADHNGV/AA
+REEKER/WALTER HUGH
+                               DI13/A29
+SIGNATURE X-
+I ACKNOWLEDGE PURCHASE OF TRANSPORTATION RELATED SERVICES AND/OR
+GOODS AND AM AWARE OF APPLICABLE RESTRICTIONS AND/OR PENALTIES
+ASSOCIATED WITH THE PURCHASE AS SHOWN ON THIS RECEIPT
+   
+   
+MXN       3804
+   
+PD      1452XT
+          21MX  CCAXXXXXXXXXXXX1000  XX/XX      APVL C 182056
+          68XV
+MXN       251A  0011/    139 9591596136 6                                
+   
+                   VILLATOURS APODAC              350086
+ETKT     **AGENT COUPON**              86515973       **ITINERARY**
+AEROMEXICO                   1 OF 1   ADHNGV/AA    AM 158L MEXBJX 07AUG
+REEKER/WALTER HUGH              TCXIGNUMX             LNNN0ACM/C940K
+                               DI13/A29  01AUG19  OAM 159H BJXMEX 08AUG
+                                                      HNNN0ACM/C940K
+   
+MEX AM BJX Q775 1042AM MEX Q775 1212MXN3804END
+   
+   
+   
+   
+MXN       3804                EXCH/1392744071518
+PD      1452XT AXXXXXXXXXXXX1000  C182056 XX/XX
+          21MX FCI02
+          68XV ORIG ISS/1392744071518MEX08AUG18
+MXN       251A
+         139 9591596136 6 PRI  FFVV
+0011/                         MXNEX         0       162 0000         89     
+   
+TAX BREAKDOWN
+PAID XT
+TAX          28YR TAX         588MX TAX         836XV
+ 
+ 
+ENDORSEMENT/RESTRICTION
+RFC AME 880912 I89
+NONEND/NONTRANS/ C940K
+                                                                   
+                   VILLATOURS APODAC              0000000     IN
+VILLATOURS APODAC     SAN NICOLAS D  MX    27JUL19 AUTH 001UA33143983 
+EXCHANGE AUTHORIZATION                              MTY O ORD 29JUL
+UNITED AIRLINES                           86515973  QNA0C9EN/LT12
+BRAVOARREDONDO/ISRAEL           C56-57  0011/  FCI2 ORD X FSD 29JUL
+                        ****EXCHANGED TICKETS****   QNA0C9EN/LT12
+                        1 016 95915275566 22        FSD   IAH
+                        1 016 95915275570           VOID
+REVIEW ETKT FOR ENDORSE/RESTRICT/PENALTY            IAH O MTY 02AUG
+FPAXXXXXXXXXXXX1006EXPXXXXS145533 FCMTY UA X/CHI UA UNA0A9EN/LT12
+ FSD367.40UA X/DEN UA HOU S100.00UA MTY490.16NUC957 MTY
+.56END ROE1.00 XFIAH4.5
+   
+   
+USD       958.00 MXN      18262
+           731XO
+          1063XD           AUTH 001UA33143983 
+           710US
+MXN        21386
+ 
