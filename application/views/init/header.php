@@ -36,6 +36,43 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?php echo $path; ?>assets/css/themes/all-themes.css" rel="stylesheet" />
+
+
+    <!-- Jquery Core Js -->
+    <script src="<?php echo $path; ?>assets/plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="<?php echo $path; ?>assets/plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="<?php echo $path; ?>assets/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="<?php echo $path; ?>assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="<?php echo $path; ?>assets/plugins/node-waves/waves.js"></script>
+
+    <!-- Custom Js -->
+    <script src="<?php echo $path; ?>assets/js/admin.js"></script>
+
+    <!-- Demo Js -->
+    <script src="<?php echo $path; ?>assets/js/demo.js"></script>
+
+    <script src="<?php echo $path; ?>assets/plugins/jquery-validation/jquery.validate.js"></script>
+    
+    <!-- Jquery DataTable Plugin Js -->
+    <script src="<?php echo $path; ?>assets/plugins/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="<?php echo $path; ?>assets/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    <script src="<?php echo $path; ?>assets/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+    <script src="<?php echo $path; ?>assets/plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+    <script src="<?php echo $path; ?>assets/plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+    <script src="<?php echo $path; ?>assets/plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+    <script src="<?php echo $path; ?>assets/plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+    <script src="<?php echo $path; ?>assets/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+    <script src="<?php echo $path; ?>assets/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+
+
 </head>
 
 <body class="theme-red">
