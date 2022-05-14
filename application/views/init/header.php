@@ -37,6 +37,7 @@
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?php echo $path; ?>assets/css/themes/all-themes.css" rel="stylesheet" />
 
+    <link href="<?php echo $path; ?>assets/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
 
     <!-- Jquery Core Js -->
     <script src="<?php echo $path; ?>assets/plugins/jquery/jquery.min.js"></script>

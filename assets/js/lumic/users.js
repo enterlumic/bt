@@ -1,16 +1,16 @@
-var Precios = {
+var Users = {
 
     init: function(){
 
-      Precios.modalShow();
-      Precios.modalHide();
-      Precios.AgregarNuevo();
-      Precios.actualizarTabla();
-      // Precios.importar_Precios();
+      Users.modalShow();
+      Users.modalHide();
+      Users.AgregarNuevo();
+      Users.actualizarTabla();
+      // Users.importar_Users();
     },
 
-    datatable_Precios: function(){
-      var table = $('#tb-datatable-precios').DataTable( 
+    datatable_Users: function(){
+      var table = $('#tb-datatable-users').DataTable( 
       {
             "stateSave": true
           , "responsive": true
@@ -19,7 +19,7 @@ var Precios = {
           , "scrollCollapse": true
           , "lengthMenu": [ 10, 25, 50, 75, 100 ]
           , "ajax": {
-               "url": "precios/get_precios_by_datatable"
+               "url": "users/get_users_by_datatable"
               ,"type": "POST"
               ,"data": {"extra":1}
           }
@@ -65,21 +65,21 @@ var Precios = {
                   "class": "text-center"
               },
               {
+                  "targets": 5,
+                  "visible": false,
+              },
+              {
+                  "targets": 6,
+                  "visible": false,
+              },
+              {
                    "targets": 11
+                  ,"width": "60"
                   ,"render": function(data, type, row, meta ){
-                    
-                    // // Test
-                    return '<a data-toggle="modal" href="#modal_form_precios" id="'+row[0]+'" class="update-precios">\
-                              <i class="fa fa-pencil-square-o f-16 m-r-15"></i>\
-                            </a>\
-                            <a href="javascript:void(0);" id="'+row[0]+'" class="delete-precios" ><i class="fa fa-trash f-16"></i></a>'; 
-
-                    // Console
-                    // return '<a data-toggle="modal" href="#modal_form_precios" id="'+row[0]+'" class="update-precios">\
-                    //           <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i>\
-                    //         </a>\
-                    //         <a href="javascript:void(0);" id="'+row[0]+'" class="delete-precios" ><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>'; 
-
+                    return '<a data-toggle="modal" href="#modal_form_users" id="'+row[0]+'" class="update-users btn btn-error">\
+                              <i class="material-icons">edit</i>\
+                            </a> \
+                            <a href="javascript:void(0);" id="'+row[0]+'" class="delete-users btn btn-danger " ><i class="material-icons">delete</i></a>';
                   }
                   ,"class": "text-center"
               }
@@ -90,15 +90,15 @@ var Precios = {
       //     table.ajax.reload( null, false );
       // }, 5000 );
 
-      $('#tb-datatable-precios tbody').on( 'click', '.delete-precios', function () {
+      $('#tb-datatable-users tbody').on( 'click', '.delete-users', function () {
 
-          document.getElementById("form_precios").reset();
+          document.getElementById("form_users").reset();
           $("label.error").hide();
           $(".error").removeClass("error");
 
           var id = this.id;
 
-          $.post( "precios/delete_precios",{"id_precios" : id}
+          $.post( "users/delete_users",{"id" : id}
               , function( data )
               {
                   try {
@@ -110,7 +110,7 @@ var Precios = {
 
                   if (data)
                   {
-                      $('#tb-datatable-precios').DataTable().ajax.reload();
+                      $('#tb-datatable-users').DataTable().ajax.reload();
 
                       // if ($(".noty_layout").length)
                       //   $(".noty_layout").remove();
@@ -122,14 +122,14 @@ var Precios = {
                           timeout: 20e3,
                             buttons: [
                               Noty.button('Deshacer', 'btn btn-success', function () {
-                                  $.post( "precios/undo_delete_precios"
-                                      ,{"id_precios" : id}
+                                  $.post( "users/undo_delete_users"
+                                      ,{"id" : id}
                                       , function( data )
                                       {
                                         if (data)
                                         {
                                           n.close();
-                                          $('#tb-datatable-precios').DataTable().ajax.reload();
+                                          $('#tb-datatable-users').DataTable().ajax.reload();
                                         }
                                         else
                                         {
@@ -158,15 +158,15 @@ var Precios = {
           );
       } );
 
-      $('#tb-datatable-precios tbody').on( 'click', '.update-precios', function () {
+      $('#tb-datatable-users tbody').on( 'click', '.update-users', function () {
           var id = this.id;
-          document.getElementById("form_precios").reset();
-          $("#id_precios").remove();
-          $("#form_precios").prepend("<input type=\"hidden\" name=\"id_precios\" id=\"id_precios\" value="+id+">");
+          document.getElementById("form_users").reset();
+          $("#id").remove();
+          $("#form_users").prepend("<input type=\"hidden\" name=\"id\" id=\"id\" value="+id+">");
 
-          $("#modal_form_precios .modal-title").html("Editar precios");
+          $("#modal_form_users .modal-title").html("Editar users");
 
-          $.post( "Precios/get_precios_by_id", {"id_precios" : id } , function( data )
+          $.post( "Users/get_users_by_id", {"id" : id } , function( data )
           {
               try {
                   var result = JSON.stringify(result);
@@ -228,16 +228,16 @@ var Precios = {
       } );
     },
 
-    set_Precios: function(){
-      $("#form_precios").validate(
+    set_Users: function(){
+      $("#form_users").validate(
       {
           submitHandler:function(form)
           {
-              var get_form = document.getElementById("form_precios");
+              var get_form = document.getElementById("form_users");
               var postData = new FormData( get_form );
 
               $.ajax({
-                  url:"precios/set_precios",
+                  url:"users/set_users",
                   data: postData,
                   cache: false,
                   processData: false,
@@ -253,9 +253,9 @@ var Precios = {
                           }
 
                           if (json["b_status"]){
-                              $('#tb-datatable-precios').DataTable().ajax.reload();
-                              document.getElementById("form_precios").reset();
-                              $('#modal_form_precios').modal('hide');
+                              $('#tb-datatable-users').DataTable().ajax.reload();
+                              document.getElementById("form_users").reset();
+                              $('#modal_form_users').modal('hide');
                           }else{
                               alert(json);
                           }
@@ -266,25 +266,25 @@ var Precios = {
             error.insertAfter($("#"+element.attr("name")).next("span"));
           }
           // , rules: {
-          //   IdPrecios: {
+          //   name: {
           //     required: true,
           //   }
-          //   ,IdTipoEnvio: {
+          //   ,apellido: {
           //     required: true,
           //   }
           // }
           // , messages: {
-          //     IdPrecios: {
+          //     name: {
           //         minlength: "Ingrese un RFC válido"
           //     }
           //   }
       });
     },
 
-    importar_Precios: function() {
+    importar_Users: function() {
 
         // define the form and the file input
-        var $form = $('#FormImportarPrecios');
+        var $form = $('#FormImportarUsers');
 
         // enable fileuploader plugin
         $form.find('input:file').fileuploader({
@@ -304,7 +304,7 @@ var Precios = {
             },
             onRemove: function(item) {
                 if (item.data.uploaded)
-                    $.post('files/assets/js/lumic/fileuploader-2.2/examples/drag-drop-form/php/ajax_remove_file_precios.php', {
+                    $.post('files/assets/js/lumic/fileuploader-2.2/examples/drag-drop-form/php/ajax_remove_file_users.php', {
                         file: item.name
                     }, function(data) {
                         // if (data)
@@ -424,7 +424,7 @@ var Precios = {
                     });
 
                     let path= data['files']['files'][0]['file'];
-                    $.post( "precios/importar_precios", {"path": path} ,function( data )
+                    $.post( "users/importar_users", {"path": path} ,function( data )
                     {
                         console.log(data);
                     });
@@ -448,14 +448,14 @@ var Precios = {
     },
 
     modalShow: function(){
-      $('#modal_form_precios').on('shown.bs.modal', function (e) {
-          $('#IdPrecios', e.target).focus();
+      $('#modal_form_users').on('shown.bs.modal', function (e) {
+          $('#name', e.target).focus();
       });
     },
 
     modalHide: function(){
-      $('#modal_form_precios').on('hidden.bs.modal', function (e) {
-          var validator = $( "#form_precios" ).validate();
+      $('#modal_form_users').on('hidden.bs.modal', function (e) {
+          var validator = $( "#form_users" ).validate();
           validator.resetForm();
           $("label.error").hide();
           $(".error").removeClass("error");
@@ -463,16 +463,16 @@ var Precios = {
     },
 
     AgregarNuevo: function(){
-      $(document).on("click", ".agregar-precios", function(){
-          document.getElementById("form_precios").reset();
-          $("#id_precios").remove();
-          $("#modal_form_precios .modal-title").html("Nuevo Precios");
+      $(document).on("click", ".agregar-users", function(){
+          document.getElementById("form_users").reset();
+          $("#id").remove();
+          $("#modal_form_users .modal-title").html("Nuevo Users");
       });      
     },
 
     actualizarTabla: function(){
-      $(document).on("click", "#actualizar-tbl-precios", function(){
-          $('#tb-datatable-precios').DataTable().ajax.reload();
+      $(document).on("click", "#actualizar-tbl-users", function(){
+          $('#tb-datatable-users').DataTable().ajax.reload();
       });
     }
 };

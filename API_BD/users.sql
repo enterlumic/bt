@@ -108,19 +108,6 @@ DELIMITER ;;
           , updated_at 
           , usuario_legacy 
           , medio_de_contacto 
-          , vCampo18_users 
-          , vCampo19_users 
-          , vCampo20_users 
-          , vCampo21_users 
-          , vCampo22_users 
-          , vCampo23_users 
-          , vCampo24_users 
-          , vCampo25_users 
-          , vCampo26_users 
-          , vCampo27_users 
-          , vCampo28_users 
-          , vCampo29_users 
-          , vCampo30_users 
           FROM users
           WHERE id= v_id AND active > 0
           LIMIT 1 ;  
@@ -148,19 +135,6 @@ CREATE PROCEDURE `sp_set_users`(
   , IN `v_updated_at` VARCHAR(340)
   , IN `v_usuario_legacy` VARCHAR(350)
   , IN `v_medio_de_contacto` VARCHAR(360)
-  , IN `v_vCampo18_users` VARCHAR(370)
-  , IN `v_vCampo19_users` VARCHAR(380)
-  , IN `v_vCampo20_users` VARCHAR(390)
-  , IN `v_vCampo21_users` VARCHAR(400)
-  , IN `v_vCampo22_users` VARCHAR(410)
-  , IN `v_vCampo23_users` VARCHAR(420)
-  , IN `v_vCampo24_users` VARCHAR(430)
-  , IN `v_vCampo25_users` VARCHAR(440)
-  , IN `v_vCampo26_users` VARCHAR(450)
-  , IN `v_vCampo27_users` VARCHAR(460)
-  , IN `v_vCampo28_users` VARCHAR(470)
-  , IN `v_vCampo29_users` VARCHAR(480)
-  , IN `v_vCampo30_users` VARCHAR(490)
   , OUT `v_i_response` INTEGER)
     MODIFIES SQL DATA
         BEGIN
@@ -187,19 +161,6 @@ CREATE PROCEDURE `sp_set_users`(
               , updated_at
               , usuario_legacy
               , medio_de_contacto
-              , vCampo18_users
-              , vCampo19_users
-              , vCampo20_users
-              , vCampo21_users
-              , vCampo22_users
-              , vCampo23_users
-              , vCampo24_users
-              , vCampo25_users
-              , vCampo26_users
-              , vCampo27_users
-              , vCampo28_users
-              , vCampo29_users
-              , vCampo30_users
             )
             SELECT  v_name
             , v_apellido
@@ -218,19 +179,6 @@ CREATE PROCEDURE `sp_set_users`(
             , v_updated_at
             , v_usuario_legacy
             , v_medio_de_contacto
-            , v_vCampo18_users
-            , v_vCampo19_users
-            , v_vCampo20_users
-            , v_vCampo21_users
-            , v_vCampo22_users
-            , v_vCampo23_users
-            , v_vCampo24_users
-            , v_vCampo25_users
-            , v_vCampo26_users
-            , v_vCampo27_users
-            , v_vCampo28_users
-            , v_vCampo29_users
-            , v_vCampo30_users
 
             FROM DUAL WHERE TRUE;
 
@@ -259,19 +207,6 @@ CREATE PROCEDURE `sp_set_importar_users`(IN `v_id` BIGINT(20)
   , IN `v_updated_at` VARCHAR(340)
   , IN `v_usuario_legacy` VARCHAR(350)
   , IN `v_medio_de_contacto` VARCHAR(360)
-  , IN `v_vCampo18_users` VARCHAR(370)
-  , IN `v_vCampo19_users` VARCHAR(380)
-  , IN `v_vCampo20_users` VARCHAR(390)
-  , IN `v_vCampo21_users` VARCHAR(400)
-  , IN `v_vCampo22_users` VARCHAR(410)
-  , IN `v_vCampo23_users` VARCHAR(420)
-  , IN `v_vCampo24_users` VARCHAR(430)
-  , IN `v_vCampo25_users` VARCHAR(440)
-  , IN `v_vCampo26_users` VARCHAR(450)
-  , IN `v_vCampo27_users` VARCHAR(460)
-  , IN `v_vCampo28_users` VARCHAR(470)
-  , IN `v_vCampo29_users` VARCHAR(480)
-  , IN `v_vCampo30_users` VARCHAR(490)
   , OUT `v_i_response` INTEGER)
     MODIFIES SQL DATA
     BEGIN
@@ -303,19 +238,6 @@ CREATE PROCEDURE `sp_set_importar_users`(IN `v_id` BIGINT(20)
               , updated_at   = v_updated_at
               , usuario_legacy   = v_usuario_legacy
               , medio_de_contacto   = v_medio_de_contacto
-              , vCampo18_users   = v_vCampo18_users
-              , vCampo19_users   = v_vCampo19_users
-              , vCampo20_users   = v_vCampo20_users
-              , vCampo21_users   = v_vCampo21_users
-              , vCampo22_users   = v_vCampo22_users
-              , vCampo23_users   = v_vCampo23_users
-              , vCampo24_users   = v_vCampo24_users
-              , vCampo25_users   = v_vCampo25_users
-              , vCampo26_users   = v_vCampo26_users
-              , vCampo27_users   = v_vCampo27_users
-              , vCampo28_users   = v_vCampo28_users
-              , vCampo29_users   = v_vCampo29_users
-              , vCampo30_users   = v_vCampo30_users
             WHERE id= v_id ;
             SET v_i_response := LAST_INSERT_ID();
         END; END IF;
@@ -339,19 +261,6 @@ CREATE PROCEDURE `sp_set_importar_users`(IN `v_id` BIGINT(20)
               , updated_at
               , usuario_legacy
               , medio_de_contacto
-              , vCampo18_users
-              , vCampo19_users
-              , vCampo20_users
-              , vCampo21_users
-              , vCampo22_users
-              , vCampo23_users
-              , vCampo24_users
-              , vCampo25_users
-              , vCampo26_users
-              , vCampo27_users
-              , vCampo28_users
-              , vCampo29_users
-              , vCampo30_users
             )
             SELECT  v_name
             , v_apellido
@@ -370,19 +279,6 @@ CREATE PROCEDURE `sp_set_importar_users`(IN `v_id` BIGINT(20)
             , v_updated_at
             , v_usuario_legacy
             , v_medio_de_contacto
-            , v_vCampo18_users
-            , v_vCampo19_users
-            , v_vCampo20_users
-            , v_vCampo21_users
-            , v_vCampo22_users
-            , v_vCampo23_users
-            , v_vCampo24_users
-            , v_vCampo25_users
-            , v_vCampo26_users
-            , v_vCampo27_users
-            , v_vCampo28_users
-            , v_vCampo29_users
-            , v_vCampo30_users
 
             FROM DUAL WHERE TRUE;
 
@@ -413,19 +309,6 @@ CREATE PROCEDURE `sp_set_update_users`(IN `v_id` BIGINT(20)
   , IN `v_updated_at` VARCHAR(340)
   , IN `v_usuario_legacy` VARCHAR(350)
   , IN `v_medio_de_contacto` VARCHAR(360)
-  , IN `v_vCampo18_users` VARCHAR(370)
-  , IN `v_vCampo19_users` VARCHAR(380)
-  , IN `v_vCampo20_users` VARCHAR(390)
-  , IN `v_vCampo21_users` VARCHAR(400)
-  , IN `v_vCampo22_users` VARCHAR(410)
-  , IN `v_vCampo23_users` VARCHAR(420)
-  , IN `v_vCampo24_users` VARCHAR(430)
-  , IN `v_vCampo25_users` VARCHAR(440)
-  , IN `v_vCampo26_users` VARCHAR(450)
-  , IN `v_vCampo27_users` VARCHAR(460)
-  , IN `v_vCampo28_users` VARCHAR(470)
-  , IN `v_vCampo29_users` VARCHAR(480)
-  , IN `v_vCampo30_users` VARCHAR(490)
   , OUT `v_i_response` INTEGER)
     MODIFIES SQL DATA
 BEGIN
@@ -450,19 +333,6 @@ BEGIN
     , updated_at   = v_updated_at
     , usuario_legacy   = v_usuario_legacy
     , medio_de_contacto   = v_medio_de_contacto
-    , vCampo18_users   = v_vCampo18_users
-    , vCampo19_users   = v_vCampo19_users
-    , vCampo20_users   = v_vCampo20_users
-    , vCampo21_users   = v_vCampo21_users
-    , vCampo22_users   = v_vCampo22_users
-    , vCampo23_users   = v_vCampo23_users
-    , vCampo24_users   = v_vCampo24_users
-    , vCampo25_users   = v_vCampo25_users
-    , vCampo26_users   = v_vCampo26_users
-    , vCampo27_users   = v_vCampo27_users
-    , vCampo28_users   = v_vCampo28_users
-    , vCampo29_users   = v_vCampo29_users
-    , vCampo30_users   = v_vCampo30_users
   WHERE id= v_id ;
   SET v_i_response := LAST_INSERT_ID();
 
