@@ -2,16 +2,16 @@
     <div class="card">
         <div class="header">
             <h2>
-                Usuarios
+                Users
             </h2>
             <ul class="header-dropdown m-r--5">
-                <a href="#modal_form_users" data-toggle="modal" class="btn btn-sm btn-primary btn-nuevo float-right agregar-users m-r-10">+ Nuevo</a>
+                <a href="#modal_form_users" data-toggle="modal" class="btn btn-sm btn-primary btn-nuevo float-right agregar-users">+ Nuevo</a>
                 <a href="javascript:void(0);" id="actualizar-tbl-users" class="btn btn-sm btn-success pull-right float-right m-r-10">Actualizar</a>
             </ul>
         </div>
         <div class="body">
             <div class="table-responsive">
-                <table id="tb-datatable-users"class="table table-bordered table-striped table-hover dataTable js-exportable" width="100%">
+                <table id="tb-datatable-users"class="table table-bordered table-striped table-hover js-basic-example dataTable" width="100%">
                     <thead class="thead-light">
                         <tr>
                             <th style="width: 5%">id</th>
@@ -48,40 +48,46 @@
                 <form class="form-material form-action-post" action="#users" id="form_users" method="post">
                     <div class="modal-body">
 
-                        <div class="form-group form-primary">
-                            <label class="float-label">name</label>
-                            <span class="form-bar"></span>
-                            <input type="text" class="form-control form-control-capitalize" id="name" name="name" >
+                        <div class="form-group form-float">
+                            <div class="form-line focused">
+                                <input type="text" id="name" name="name" class="form-control">
+                                <label class="form-label">name</label>
+                            </div>
                         </div>
 
-                        <div class="form-group form-primary">
-                            <label class="float-label">apellido</label>
-                            <span class="form-bar"></span>
-                            <input type="text" class="form-control" id="apellido" name="apellido" >
+                        <div class="form-group form-float">
+                            <div class="form-line focused">
+                                <input type="text" id="apellido" name="apellido" class="form-control">
+                                <label class="form-label">apellido</label>
+                            </div>
                         </div>
 
-                        <div class="form-group form-primary">
-                            <label class="float-label">email</label>
-                            <span class="form-bar"></span>
-                            <input type="text" class="form-control" id="email" name="email" >
+                        <div class="form-group form-float">
+                            <div class="form-line focused">
+                                <input type="text" id="email" name="email" class="form-control">
+                                <label class="form-label">email</label>
+                            </div>
                         </div>
 
-                        <div class="form-group form-primary">
-                            <label class="float-label">email_verified_at</label>
-                            <span class="form-bar"></span>
-                            <input type="text" class="form-control" id="email_verified_at" name="email_verified_at" >
+                        <div class="form-group form-float">
+                            <div class="form-line focused">
+                                <input type="text" id="email_verified_at" name="email_verified_at" class="form-control">
+                                <label class="form-label">email_verified_at</label>
+                            </div>
                         </div>
 
-                        <div class="form-group form-primary">
-                            <label class="float-label">password</label>
-                            <span class="form-bar"></span>
-                            <input type="text" class="form-control" id="password" name="password" >
+                        <div class="form-group form-float">
+                            <div class="form-line focused">
+                                <input type="text" id="password" name="password" class="form-control">
+                                <label class="form-label">password</label>
+                            </div>
                         </div>
 
-                        <div class="form-group form-primary">
-                            <label class="float-label">pass_crypt</label>
-                            <span class="form-bar"></span>
-                            <input type="text" class="form-control" id="pass_crypt" name="pass_crypt" >
+                        <div class="form-group form-float">
+                            <div class="form-line focused">
+                                <input type="text" id="pass_crypt" name="pass_crypt" class="form-control">
+                                <label class="form-label">pass_crypt</label>
+                            </div>
                         </div>
 
                     </div>
