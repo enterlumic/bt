@@ -68,6 +68,18 @@ var Direccion_woocommerce = {
               //     "targets": 0,
               //     "visible": false,
               // },
+
+              {
+                  "targets": [2]
+                , "render": function(data, type, row, meta){
+                    var contador= meta.row + 1;
+                    // var cat= data.replace("Cat_", "");
+                    data = '<a href="http://'+data+'" target="_blank" class="b-b-primary text-primary">' + data + '</a>';
+                    return data;
+                  }
+              },
+
+
               {
                    "targets": 11
                   ,"render": function(data, type, row, meta ){

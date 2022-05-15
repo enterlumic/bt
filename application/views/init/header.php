@@ -123,16 +123,13 @@
                         </a>
                         <ul class="ml-menu" style="display: block;">
                             <li>
-                                <a href="direccion_woocommerce">direccion_woocommerce</a>
+                                <a href="direccion_woocommerce">Direccion_woocommerce</a>
                             </li>
                             <li>
                                 <a href="users">Users</a>
                             </li>
                             <li>
                                 <a href="ajustes">Ajustes</a>
-                            </li>
-                            <li>
-                                <a href="configuraciones">Configuraciones</a>
                             </li>
                         </ul>
                     </li>

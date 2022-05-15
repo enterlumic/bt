@@ -10,12 +10,18 @@ var Users = {
     },
 
     datatable_Users: function(){
+
+      // $('#tb-datatable-users tfoot th').each(function () {
+      //     var title = $(this).text();
+      //     $(this).html('<input type="text" placeholder="' + title + '" />');
+      // });
+
       var table = $('#tb-datatable-users').DataTable( 
       {
             "stateSave": true
           , "responsive": true
           , "serverSide": true
-          , "pageLength": 50
+          , "pageLength": 10
           , "scrollCollapse": true
           , "lengthMenu": [ 10, 25, 50, 75, 100 ]
           , "ajax": {
@@ -24,6 +30,19 @@ var Users = {
               ,"data": {"extra":1}
           }
           , "processing": true
+          // , initComplete: function () {
+          //     this.api()
+          //         .columns()
+          //         .every(function () {
+          //             var that = this;
+
+          //             $('input', this.footer()).on('keyup change clear', function () {
+          //                 if (that.search() !== this.value) {
+          //                     that.search(this.value).draw();
+          //                 }
+          //             });
+          //         });
+          // }
           , "language": {
               "processing": '<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i><span class="sr-only">Cargando...</span>',
               "sProcessing":     "Procesando...",
@@ -58,12 +77,17 @@ var Users = {
           , "columnDefs": [
               {
                   "targets": 0,
+                  "render": function(data, type, row, meta){
+                      var contador= meta.row + 1;
+                      return contador;
+                  },
                   "class": "text-center"
               },
               {
                   "targets": 5,
                   "visible": false,
               },
+
               {
                   "targets": 6,
                   "visible": false,

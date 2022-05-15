@@ -91,7 +91,7 @@
         {
             foreach ($result as $key => $value) 
             {
-                $data[]= array( $this->encryption->encrypt($value->id)
+                $data[]= array( $value->id
                               , $value->id_cliente
                               , $value->url
                               , $value->nombre

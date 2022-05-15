@@ -5,7 +5,7 @@
                 Users
             </h2>
             <ul class="header-dropdown m-r--5">
-                <a href="#modal_form_users" data-toggle="modal" class="btn btn-sm btn-primary btn-nuevo float-right agregar-users">+ Nuevo</a>
+                <a href="#modal_form_users" data-toggle="modal" class="btn btn-sm btn-primary btn-nuevo float-right agregar-users m-r-10">+ Nuevo</a>
                 <a href="javascript:void(0);" id="actualizar-tbl-users" class="btn btn-sm btn-success pull-right float-right m-r-10">Actualizar</a>
             </ul>
         </div>
@@ -24,10 +24,26 @@
                             <th >referido</th>
                             <th >myrefcode</th>
                             <th >admin</th>
-                            <th >telefono</th>                            
+                            <th >telefono</th>
                             <th >Acción</th>
                         </tr>
                     </thead>
+                    <tfoot>
+                        <tr>
+                           <th style="width: 5%">id</th>
+                            <th >name</th>
+                            <th >apellido</th>
+                            <th >email</th>
+                            <th >email_verified_at</th>
+                            <th >password</th>
+                            <th >pass_crypt</th>
+                            <th >referido</th>
+                            <th >myrefcode</th>
+                            <th >admin</th>
+                            <th >telefono</th>
+                            <th >Acción</th>
+                         </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>
