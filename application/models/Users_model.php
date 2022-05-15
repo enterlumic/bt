@@ -95,7 +95,7 @@
         {
             foreach ($result as $key => $value) 
             {
-                $data[]= array( $this->encryption->encrypt($value->id)
+                $data[]= array( $value->id
                               , $value->name
                               , $value->apellido
                               , $value->email
@@ -182,7 +182,7 @@
 
     public function set_update_users($postData)
     {
-        $postData["id"]= $this->encryption->decrypt($postData["id"]);
+        $postData["id"]= $this->encryption->decrypt();
 
         if (empty($postData["id"]))
             return $this->load->response(false, array("vc_message" => "El id es altamente requerido ") );

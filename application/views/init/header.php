@@ -116,13 +116,29 @@
             <!-- Menu -->
             <div class="menu">
                 <ul class="list">
-                    <li  class="active">
-                        <a href="javascript:void(0);">
-                            <i class="material-icons">home</i>
-                            <span>Home</span>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">assignment</i>
+                            <span>BD</span>
                         </a>
+                        <ul class="ml-menu" style="display: block;">
+                            <li>
+                                <a href="direccion_woocommerce">direccion_woocommerce</a>
+                            </li>
+                            <li>
+                                <a href="users">Users</a>
+                            </li>
+                            <li>
+                                <a href="ajustes">Ajustes</a>
+                            </li>
+                            <li>
+                                <a href="configuraciones">Configuraciones</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
+
+
             </div>
             <!-- #Menu -->
         </aside>

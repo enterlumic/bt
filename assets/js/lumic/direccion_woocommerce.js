@@ -1,16 +1,16 @@
-var Users = {
+var Direccion_woocommerce = {
 
     init: function(){
 
-      Users.modalShow();
-      Users.modalHide();
-      Users.AgregarNuevo();
-      Users.actualizarTabla();
-      // Users.importar_Users();
+      Direccion_woocommerce.modalShow();
+      Direccion_woocommerce.modalHide();
+      Direccion_woocommerce.AgregarNuevo();
+      Direccion_woocommerce.actualizarTabla();
+      // Direccion_woocommerce.importar_Direccion_woocommerce();
     },
 
-    datatable_Users: function(){
-      var table = $('#tb-datatable-users').DataTable( 
+    datatable_Direccion_woocommerce: function(){
+      var table = $('#tb-datatable-direccion_woocommerce').DataTable( 
       {
             "stateSave": true
           , "responsive": true
@@ -19,7 +19,7 @@ var Users = {
           , "scrollCollapse": true
           , "lengthMenu": [ 10, 25, 50, 75, 100 ]
           , "ajax": {
-               "url": "users/get_users_by_datatable"
+               "url": "direccion_woocommerce/get_direccion_woocommerce_by_datatable"
               ,"type": "POST"
               ,"data": {"extra":1}
           }
@@ -58,24 +58,38 @@ var Users = {
           , "columnDefs": [
               {
                   "targets": 0,
+                  "render": function(data, type, row, meta){
+                      var contador= meta.row + 1;
+                      return contador;
+                  },
                   "class": "text-center"
               },
-              {
-                  "targets": 5,
-                  "visible": false,
-              },
-              {
-                  "targets": 6,
-                  "visible": false,
-              },
+              // {
+              //     "targets": 0,
+              //     "visible": false,
+              // },
               {
                    "targets": 11
-                  ,"width": "60"
                   ,"render": function(data, type, row, meta ){
-                    return '<a data-toggle="modal" href="#modal_form_users" id="'+row[0]+'" class="update-users btn btn-error">\
+                    
+                    // // Test
+                    // return '<a data-toggle="modal" href="#modal_form_direccion_woocommerce" id="'+row[0]+'" class="update-direccion_woocommerce">\
+                    //           <i class="fa fa-pencil-square-o f-16 m-r-15"></i>\
+                    //         </a>\
+                    //         <a href="javascript:void(0);" id="'+row[0]+'" class="delete-direccion_woocommerce" ><i class="fa fa-trash f-16"></i></a>'; 
+
+                    // Teiker
+                    return '<a data-toggle="modal" href="#modal_form_direccion_woocommerce" id="'+row[0]+'" class="update-direccion_woocommerce btn btn-error">\
                               <i class="material-icons">edit</i>\
-                            </a> \
-                            <a href="javascript:void(0);" id="'+row[0]+'" class="delete-users btn btn-danger " ><i class="material-icons">delete</i></a>';
+                            </a>\
+                            <a href="javascript:void(0);" id="'+row[0]+'" class="delete-direccion_woocommerce btn btn-danger" ><i class="material-icons">delete</i></a>';
+
+                    // Console
+                    // return '<a data-toggle="modal" href="#modal_form_direccion_woocommerce" id="'+row[0]+'" class="update-direccion_woocommerce">\
+                    //           <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i>\
+                    //         </a>\
+                    //         <a href="javascript:void(0);" id="'+row[0]+'" class="delete-direccion_woocommerce" ><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>'; 
+
                   }
                   ,"class": "text-center"
               }
@@ -86,15 +100,15 @@ var Users = {
       //     table.ajax.reload( null, false );
       // }, 5000 );
 
-      $('#tb-datatable-users tbody').on( 'click', '.delete-users', function () {
+      $('#tb-datatable-direccion_woocommerce tbody').on( 'click', '.delete-direccion_woocommerce', function () {
 
-          document.getElementById("form_users").reset();
+          document.getElementById("form_direccion_woocommerce").reset();
           $("label.error").hide();
           $(".error").removeClass("error");
 
           var id = this.id;
 
-          $.post( "users/delete_users",{"id" : id}
+          $.post( "direccion_woocommerce/delete_direccion_woocommerce",{"iddirecciontienda" : id}
               , function( data )
               {
                   try {
@@ -106,7 +120,7 @@ var Users = {
 
                   if (data)
                   {
-                      $('#tb-datatable-users').DataTable().ajax.reload();
+                      $('#tb-datatable-direccion_woocommerce').DataTable().ajax.reload();
 
                       // if ($(".noty_layout").length)
                       //   $(".noty_layout").remove();
@@ -118,14 +132,14 @@ var Users = {
                           timeout: 20e3,
                             buttons: [
                               Noty.button('Deshacer', 'btn btn-success', function () {
-                                  $.post( "users/undo_delete_users"
-                                      ,{"id" : id}
+                                  $.post( "direccion_woocommerce/undo_delete_direccion_woocommerce"
+                                      ,{"iddirecciontienda" : id}
                                       , function( data )
                                       {
                                         if (data)
                                         {
                                           n.close();
-                                          $('#tb-datatable-users').DataTable().ajax.reload();
+                                          $('#tb-datatable-direccion_woocommerce').DataTable().ajax.reload();
                                         }
                                         else
                                         {
@@ -154,15 +168,15 @@ var Users = {
           );
       } );
 
-      $('#tb-datatable-users tbody').on( 'click', '.update-users', function () {
+      $('#tb-datatable-direccion_woocommerce tbody').on( 'click', '.update-direccion_woocommerce', function () {
           var id = this.id;
-          document.getElementById("form_users").reset();
-          $("#id").remove();
-          $("#form_users").prepend("<input type=\"hidden\" name=\"id\" id=\"id\" value="+id+">");
+          document.getElementById("form_direccion_woocommerce").reset();
+          $("#iddirecciontienda").remove();
+          $("#form_direccion_woocommerce").prepend("<input type=\"hidden\" name=\"iddirecciontienda\" id=\"iddirecciontienda\" value="+id+">");
 
-          $("#modal_form_users .modal-title").html("Editar users");
+          $("#modal_form_direccion_woocommerce .modal-title").html("Editar direccion_woocommerce");
 
-          $.post( "Users/get_users_by_id", {"id" : id } , function( data )
+          $.post( "Direccion_woocommerce/get_direccion_woocommerce_by_id", {"iddirecciontienda" : id } , function( data )
           {
               try {
                   var result = JSON.stringify(result);
@@ -224,16 +238,16 @@ var Users = {
       } );
     },
 
-    set_Users: function(){
-      $("#form_users").validate(
+    set_Direccion_woocommerce: function(){
+      $("#form_direccion_woocommerce").validate(
       {
           submitHandler:function(form)
           {
-              var get_form = document.getElementById("form_users");
+              var get_form = document.getElementById("form_direccion_woocommerce");
               var postData = new FormData( get_form );
 
               $.ajax({
-                  url:"users/set_users",
+                  url:"direccion_woocommerce/set_direccion_woocommerce",
                   data: postData,
                   cache: false,
                   processData: false,
@@ -249,9 +263,9 @@ var Users = {
                           }
 
                           if (json["b_status"]){
-                              $('#tb-datatable-users').DataTable().ajax.reload();
-                              document.getElementById("form_users").reset();
-                              $('#modal_form_users').modal('hide');
+                              $('#tb-datatable-direccion_woocommerce').DataTable().ajax.reload();
+                              document.getElementById("form_direccion_woocommerce").reset();
+                              $('#modal_form_direccion_woocommerce').modal('hide');
                           }else{
                               alert(json);
                           }
@@ -262,25 +276,25 @@ var Users = {
             error.insertAfter($("#"+element.attr("name")).next("span"));
           }
           // , rules: {
-          //   name: {
+          //   id_cliente: {
           //     required: true,
           //   }
-          //   ,apellido: {
+          //   ,url: {
           //     required: true,
           //   }
           // }
           // , messages: {
-          //     name: {
+          //     id_cliente: {
           //         minlength: "Ingrese un RFC válido"
           //     }
           //   }
       });
     },
 
-    importar_Users: function() {
+    importar_Direccion_woocommerce: function() {
 
         // define the form and the file input
-        var $form = $('#FormImportarUsers');
+        var $form = $('#FormImportarDireccion_woocommerce');
 
         // enable fileuploader plugin
         $form.find('input:file').fileuploader({
@@ -300,7 +314,7 @@ var Users = {
             },
             onRemove: function(item) {
                 if (item.data.uploaded)
-                    $.post('files/assets/js/lumic/fileuploader-2.2/examples/drag-drop-form/php/ajax_remove_file_users.php', {
+                    $.post('files/assets/js/lumic/fileuploader-2.2/examples/drag-drop-form/php/ajax_remove_file_direccion_woocommerce.php', {
                         file: item.name
                     }, function(data) {
                         // if (data)
@@ -420,7 +434,7 @@ var Users = {
                     });
 
                     let path= data['files']['files'][0]['file'];
-                    $.post( "users/importar_users", {"path": path} ,function( data )
+                    $.post( "direccion_woocommerce/importar_direccion_woocommerce", {"path": path} ,function( data )
                     {
                         console.log(data);
                     });
@@ -444,14 +458,14 @@ var Users = {
     },
 
     modalShow: function(){
-      $('#modal_form_users').on('shown.bs.modal', function (e) {
-          $('#name', e.target).focus();
+      $('#modal_form_direccion_woocommerce').on('shown.bs.modal', function (e) {
+          $('#id_cliente', e.target).focus();
       });
     },
 
     modalHide: function(){
-      $('#modal_form_users').on('hidden.bs.modal', function (e) {
-          var validator = $( "#form_users" ).validate();
+      $('#modal_form_direccion_woocommerce').on('hidden.bs.modal', function (e) {
+          var validator = $( "#form_direccion_woocommerce" ).validate();
           validator.resetForm();
           $("label.error").hide();
           $(".error").removeClass("error");
@@ -459,16 +473,16 @@ var Users = {
     },
 
     AgregarNuevo: function(){
-      $(document).on("click", ".agregar-users", function(){
-          document.getElementById("form_users").reset();
-          $("#id").remove();
-          $("#modal_form_users .modal-title").html("Nuevo Users");
+      $(document).on("click", ".agregar-direccion_woocommerce", function(){
+          document.getElementById("form_direccion_woocommerce").reset();
+          $("#iddirecciontienda").remove();
+          $("#modal_form_direccion_woocommerce .modal-title").html("Nuevo Direccion_woocommerce");
       });      
     },
 
     actualizarTabla: function(){
-      $(document).on("click", "#actualizar-tbl-users", function(){
-          $('#tb-datatable-users').DataTable().ajax.reload();
+      $(document).on("click", "#actualizar-tbl-direccion_woocommerce", function(){
+          $('#tb-datatable-direccion_woocommerce').DataTable().ajax.reload();
       });
     }
 };

@@ -104,23 +104,6 @@ DELIMITER ;;
           , estado 
           , pais 
           , activo 
-          , vCampo14_direccion_woocommerce 
-          , vCampo15_direccion_woocommerce 
-          , vCampo16_direccion_woocommerce 
-          , vCampo17_direccion_woocommerce 
-          , vCampo18_direccion_woocommerce 
-          , vCampo19_direccion_woocommerce 
-          , vCampo20_direccion_woocommerce 
-          , vCampo21_direccion_woocommerce 
-          , vCampo22_direccion_woocommerce 
-          , vCampo23_direccion_woocommerce 
-          , vCampo24_direccion_woocommerce 
-          , vCampo25_direccion_woocommerce 
-          , vCampo26_direccion_woocommerce 
-          , vCampo27_direccion_woocommerce 
-          , vCampo28_direccion_woocommerce 
-          , vCampo29_direccion_woocommerce 
-          , vCampo30_direccion_woocommerce 
           FROM direccion_woocommerce
           WHERE iddirecciontienda= v_iddirecciontienda AND Activo > 0
           LIMIT 1 ;  
@@ -144,23 +127,6 @@ CREATE PROCEDURE `sp_set_direccion_woocommerce`(
   , IN `v_estado` VARCHAR(300)
   , IN `v_pais` VARCHAR(310)
   , IN `v_activo` VARCHAR(320)
-  , IN `v_vCampo14_direccion_woocommerce` VARCHAR(330)
-  , IN `v_vCampo15_direccion_woocommerce` VARCHAR(340)
-  , IN `v_vCampo16_direccion_woocommerce` VARCHAR(350)
-  , IN `v_vCampo17_direccion_woocommerce` VARCHAR(360)
-  , IN `v_vCampo18_direccion_woocommerce` VARCHAR(370)
-  , IN `v_vCampo19_direccion_woocommerce` VARCHAR(380)
-  , IN `v_vCampo20_direccion_woocommerce` VARCHAR(390)
-  , IN `v_vCampo21_direccion_woocommerce` VARCHAR(400)
-  , IN `v_vCampo22_direccion_woocommerce` VARCHAR(410)
-  , IN `v_vCampo23_direccion_woocommerce` VARCHAR(420)
-  , IN `v_vCampo24_direccion_woocommerce` VARCHAR(430)
-  , IN `v_vCampo25_direccion_woocommerce` VARCHAR(440)
-  , IN `v_vCampo26_direccion_woocommerce` VARCHAR(450)
-  , IN `v_vCampo27_direccion_woocommerce` VARCHAR(460)
-  , IN `v_vCampo28_direccion_woocommerce` VARCHAR(470)
-  , IN `v_vCampo29_direccion_woocommerce` VARCHAR(480)
-  , IN `v_vCampo30_direccion_woocommerce` VARCHAR(490)
   , OUT `v_i_response` INTEGER)
     MODIFIES SQL DATA
         BEGIN
@@ -183,23 +149,6 @@ CREATE PROCEDURE `sp_set_direccion_woocommerce`(
               , estado
               , pais
               , activo
-              , vCampo14_direccion_woocommerce
-              , vCampo15_direccion_woocommerce
-              , vCampo16_direccion_woocommerce
-              , vCampo17_direccion_woocommerce
-              , vCampo18_direccion_woocommerce
-              , vCampo19_direccion_woocommerce
-              , vCampo20_direccion_woocommerce
-              , vCampo21_direccion_woocommerce
-              , vCampo22_direccion_woocommerce
-              , vCampo23_direccion_woocommerce
-              , vCampo24_direccion_woocommerce
-              , vCampo25_direccion_woocommerce
-              , vCampo26_direccion_woocommerce
-              , vCampo27_direccion_woocommerce
-              , vCampo28_direccion_woocommerce
-              , vCampo29_direccion_woocommerce
-              , vCampo30_direccion_woocommerce
             )
             SELECT  v_id_cliente
             , v_url
@@ -214,23 +163,6 @@ CREATE PROCEDURE `sp_set_direccion_woocommerce`(
             , v_estado
             , v_pais
             , v_activo
-            , v_vCampo14_direccion_woocommerce
-            , v_vCampo15_direccion_woocommerce
-            , v_vCampo16_direccion_woocommerce
-            , v_vCampo17_direccion_woocommerce
-            , v_vCampo18_direccion_woocommerce
-            , v_vCampo19_direccion_woocommerce
-            , v_vCampo20_direccion_woocommerce
-            , v_vCampo21_direccion_woocommerce
-            , v_vCampo22_direccion_woocommerce
-            , v_vCampo23_direccion_woocommerce
-            , v_vCampo24_direccion_woocommerce
-            , v_vCampo25_direccion_woocommerce
-            , v_vCampo26_direccion_woocommerce
-            , v_vCampo27_direccion_woocommerce
-            , v_vCampo28_direccion_woocommerce
-            , v_vCampo29_direccion_woocommerce
-            , v_vCampo30_direccion_woocommerce
 
             FROM DUAL WHERE TRUE;
 
@@ -255,23 +187,6 @@ CREATE PROCEDURE `sp_set_importar_direccion_woocommerce`(IN `v_iddirecciontienda
   , IN `v_estado` VARCHAR(300)
   , IN `v_pais` VARCHAR(310)
   , IN `v_activo` VARCHAR(320)
-  , IN `v_vCampo14_direccion_woocommerce` VARCHAR(330)
-  , IN `v_vCampo15_direccion_woocommerce` VARCHAR(340)
-  , IN `v_vCampo16_direccion_woocommerce` VARCHAR(350)
-  , IN `v_vCampo17_direccion_woocommerce` VARCHAR(360)
-  , IN `v_vCampo18_direccion_woocommerce` VARCHAR(370)
-  , IN `v_vCampo19_direccion_woocommerce` VARCHAR(380)
-  , IN `v_vCampo20_direccion_woocommerce` VARCHAR(390)
-  , IN `v_vCampo21_direccion_woocommerce` VARCHAR(400)
-  , IN `v_vCampo22_direccion_woocommerce` VARCHAR(410)
-  , IN `v_vCampo23_direccion_woocommerce` VARCHAR(420)
-  , IN `v_vCampo24_direccion_woocommerce` VARCHAR(430)
-  , IN `v_vCampo25_direccion_woocommerce` VARCHAR(440)
-  , IN `v_vCampo26_direccion_woocommerce` VARCHAR(450)
-  , IN `v_vCampo27_direccion_woocommerce` VARCHAR(460)
-  , IN `v_vCampo28_direccion_woocommerce` VARCHAR(470)
-  , IN `v_vCampo29_direccion_woocommerce` VARCHAR(480)
-  , IN `v_vCampo30_direccion_woocommerce` VARCHAR(490)
   , OUT `v_i_response` INTEGER)
     MODIFIES SQL DATA
     BEGIN
@@ -299,23 +214,6 @@ CREATE PROCEDURE `sp_set_importar_direccion_woocommerce`(IN `v_iddirecciontienda
               , estado   = v_estado
               , pais   = v_pais
               , activo   = v_activo
-              , vCampo14_direccion_woocommerce   = v_vCampo14_direccion_woocommerce
-              , vCampo15_direccion_woocommerce   = v_vCampo15_direccion_woocommerce
-              , vCampo16_direccion_woocommerce   = v_vCampo16_direccion_woocommerce
-              , vCampo17_direccion_woocommerce   = v_vCampo17_direccion_woocommerce
-              , vCampo18_direccion_woocommerce   = v_vCampo18_direccion_woocommerce
-              , vCampo19_direccion_woocommerce   = v_vCampo19_direccion_woocommerce
-              , vCampo20_direccion_woocommerce   = v_vCampo20_direccion_woocommerce
-              , vCampo21_direccion_woocommerce   = v_vCampo21_direccion_woocommerce
-              , vCampo22_direccion_woocommerce   = v_vCampo22_direccion_woocommerce
-              , vCampo23_direccion_woocommerce   = v_vCampo23_direccion_woocommerce
-              , vCampo24_direccion_woocommerce   = v_vCampo24_direccion_woocommerce
-              , vCampo25_direccion_woocommerce   = v_vCampo25_direccion_woocommerce
-              , vCampo26_direccion_woocommerce   = v_vCampo26_direccion_woocommerce
-              , vCampo27_direccion_woocommerce   = v_vCampo27_direccion_woocommerce
-              , vCampo28_direccion_woocommerce   = v_vCampo28_direccion_woocommerce
-              , vCampo29_direccion_woocommerce   = v_vCampo29_direccion_woocommerce
-              , vCampo30_direccion_woocommerce   = v_vCampo30_direccion_woocommerce
             WHERE iddirecciontienda= v_iddirecciontienda ;
             SET v_i_response := LAST_INSERT_ID();
         END; END IF;
@@ -335,23 +233,6 @@ CREATE PROCEDURE `sp_set_importar_direccion_woocommerce`(IN `v_iddirecciontienda
               , estado
               , pais
               , activo
-              , vCampo14_direccion_woocommerce
-              , vCampo15_direccion_woocommerce
-              , vCampo16_direccion_woocommerce
-              , vCampo17_direccion_woocommerce
-              , vCampo18_direccion_woocommerce
-              , vCampo19_direccion_woocommerce
-              , vCampo20_direccion_woocommerce
-              , vCampo21_direccion_woocommerce
-              , vCampo22_direccion_woocommerce
-              , vCampo23_direccion_woocommerce
-              , vCampo24_direccion_woocommerce
-              , vCampo25_direccion_woocommerce
-              , vCampo26_direccion_woocommerce
-              , vCampo27_direccion_woocommerce
-              , vCampo28_direccion_woocommerce
-              , vCampo29_direccion_woocommerce
-              , vCampo30_direccion_woocommerce
             )
             SELECT  v_id_cliente
             , v_url
@@ -366,23 +247,6 @@ CREATE PROCEDURE `sp_set_importar_direccion_woocommerce`(IN `v_iddirecciontienda
             , v_estado
             , v_pais
             , v_activo
-            , v_vCampo14_direccion_woocommerce
-            , v_vCampo15_direccion_woocommerce
-            , v_vCampo16_direccion_woocommerce
-            , v_vCampo17_direccion_woocommerce
-            , v_vCampo18_direccion_woocommerce
-            , v_vCampo19_direccion_woocommerce
-            , v_vCampo20_direccion_woocommerce
-            , v_vCampo21_direccion_woocommerce
-            , v_vCampo22_direccion_woocommerce
-            , v_vCampo23_direccion_woocommerce
-            , v_vCampo24_direccion_woocommerce
-            , v_vCampo25_direccion_woocommerce
-            , v_vCampo26_direccion_woocommerce
-            , v_vCampo27_direccion_woocommerce
-            , v_vCampo28_direccion_woocommerce
-            , v_vCampo29_direccion_woocommerce
-            , v_vCampo30_direccion_woocommerce
 
             FROM DUAL WHERE TRUE;
 
@@ -409,23 +273,6 @@ CREATE PROCEDURE `sp_set_update_direccion_woocommerce`(IN `v_iddirecciontienda` 
   , IN `v_estado` VARCHAR(300)
   , IN `v_pais` VARCHAR(310)
   , IN `v_activo` VARCHAR(320)
-  , IN `v_vCampo14_direccion_woocommerce` VARCHAR(330)
-  , IN `v_vCampo15_direccion_woocommerce` VARCHAR(340)
-  , IN `v_vCampo16_direccion_woocommerce` VARCHAR(350)
-  , IN `v_vCampo17_direccion_woocommerce` VARCHAR(360)
-  , IN `v_vCampo18_direccion_woocommerce` VARCHAR(370)
-  , IN `v_vCampo19_direccion_woocommerce` VARCHAR(380)
-  , IN `v_vCampo20_direccion_woocommerce` VARCHAR(390)
-  , IN `v_vCampo21_direccion_woocommerce` VARCHAR(400)
-  , IN `v_vCampo22_direccion_woocommerce` VARCHAR(410)
-  , IN `v_vCampo23_direccion_woocommerce` VARCHAR(420)
-  , IN `v_vCampo24_direccion_woocommerce` VARCHAR(430)
-  , IN `v_vCampo25_direccion_woocommerce` VARCHAR(440)
-  , IN `v_vCampo26_direccion_woocommerce` VARCHAR(450)
-  , IN `v_vCampo27_direccion_woocommerce` VARCHAR(460)
-  , IN `v_vCampo28_direccion_woocommerce` VARCHAR(470)
-  , IN `v_vCampo29_direccion_woocommerce` VARCHAR(480)
-  , IN `v_vCampo30_direccion_woocommerce` VARCHAR(490)
   , OUT `v_i_response` INTEGER)
     MODIFIES SQL DATA
 BEGIN
@@ -446,23 +293,6 @@ BEGIN
     , estado   = v_estado
     , pais   = v_pais
     , activo   = v_activo
-    , vCampo14_direccion_woocommerce   = v_vCampo14_direccion_woocommerce
-    , vCampo15_direccion_woocommerce   = v_vCampo15_direccion_woocommerce
-    , vCampo16_direccion_woocommerce   = v_vCampo16_direccion_woocommerce
-    , vCampo17_direccion_woocommerce   = v_vCampo17_direccion_woocommerce
-    , vCampo18_direccion_woocommerce   = v_vCampo18_direccion_woocommerce
-    , vCampo19_direccion_woocommerce   = v_vCampo19_direccion_woocommerce
-    , vCampo20_direccion_woocommerce   = v_vCampo20_direccion_woocommerce
-    , vCampo21_direccion_woocommerce   = v_vCampo21_direccion_woocommerce
-    , vCampo22_direccion_woocommerce   = v_vCampo22_direccion_woocommerce
-    , vCampo23_direccion_woocommerce   = v_vCampo23_direccion_woocommerce
-    , vCampo24_direccion_woocommerce   = v_vCampo24_direccion_woocommerce
-    , vCampo25_direccion_woocommerce   = v_vCampo25_direccion_woocommerce
-    , vCampo26_direccion_woocommerce   = v_vCampo26_direccion_woocommerce
-    , vCampo27_direccion_woocommerce   = v_vCampo27_direccion_woocommerce
-    , vCampo28_direccion_woocommerce   = v_vCampo28_direccion_woocommerce
-    , vCampo29_direccion_woocommerce   = v_vCampo29_direccion_woocommerce
-    , vCampo30_direccion_woocommerce   = v_vCampo30_direccion_woocommerce
   WHERE iddirecciontienda= v_iddirecciontienda ;
   SET v_i_response := LAST_INSERT_ID();
 
