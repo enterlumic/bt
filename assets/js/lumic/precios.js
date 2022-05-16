@@ -27,6 +27,86 @@ var Precios = {
           return false;
       });
 
+      $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+          var PrecioMin = parseInt($('#PrecioMin').val(), 10);
+          var PrecioMax = parseInt($('#PrecioMax').val(), 10);
+          var Precio = parseFloat(data[2]) || 0;
+
+          if (
+              (isNaN(PrecioMin) && isNaN(PrecioMax)) ||
+              (isNaN(PrecioMin) && Precio <= PrecioMax) ||
+              (PrecioMin <= Precio && isNaN(PrecioMax)) ||
+              (PrecioMin <= Precio && Precio <= PrecioMax)
+          ) {
+              return true;
+          }
+          return false;
+      });
+
+      $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+          var PesoInicioMin = parseInt($('#PesoInicioMin').val(), 10);
+          var PesoInicioMax = parseInt($('#PesoInicioMax').val(), 10);
+          var PesoInicio = parseFloat(data[3]) || 0;
+
+          if (
+              (isNaN(PesoInicioMin) && isNaN(PesoInicioMax)) ||
+              (isNaN(PesoInicioMin) && PesoInicio <= PesoInicioMax) ||
+              (PesoInicioMin <= PesoInicio && isNaN(PesoInicioMax)) ||
+              (PesoInicioMin <= PesoInicio && PesoInicio <= PesoInicioMax)
+          ) {
+              return true;
+          }
+          return false;
+      });
+
+      $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+          var PesoFinMin = parseInt($('#PesoFinMin').val(), 10);
+          var PesoFinMax = parseInt($('#PesoFinMax').val(), 10);
+          var PesoFin = parseFloat(data[4]) || 0;
+
+          if (
+              (isNaN(PesoFinMin) && isNaN(PesoFinMax)) ||
+              (isNaN(PesoFinMin) && PesoFin <= PesoFinMax) ||
+              (PesoFinMin <= PesoFin && isNaN(PesoFinMax)) ||
+              (PesoFinMin <= PesoFin && PesoFin <= PesoFinMax)
+          ) {
+              return true;
+          }
+          return false;
+      });
+
+      $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+          var MedidaFinMin = parseInt($('#MedidaFinMin').val(), 10);
+          var MedidaFinMax = parseInt($('#MedidaFinMax').val(), 10);
+          var MedidaFin = parseFloat(data[5]) || 0;
+
+          if (
+              (isNaN(MedidaFinMin) && isNaN(MedidaFinMax)) ||
+              (isNaN(MedidaFinMin) && MedidaFin <= MedidaFinMax) ||
+              (MedidaFinMin <= MedidaFin && isNaN(MedidaFinMax)) ||
+              (MedidaFinMin <= MedidaFin && MedidaFin <= MedidaFinMax)
+          ) {
+              return true;
+          }
+          return false;
+      });
+
+      $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+          var DimensionFinMin = parseInt($('#DimensionFinMin').val(), 10);
+          var DimensionFinMax = parseInt($('#DimensionFinMax').val(), 10);
+          var DimensionFin = parseFloat(data[6]) || 0;
+
+          if (
+              (isNaN(DimensionFinMin) && isNaN(DimensionFinMax)) ||
+              (isNaN(DimensionFinMin) && DimensionFin <= DimensionFinMax) ||
+              (DimensionFinMin <= DimensionFin && isNaN(DimensionFinMax)) ||
+              (DimensionFinMin <= DimensionFin && DimensionFin <= DimensionFinMax)
+          ) {
+              return true;
+          }
+          return false;
+      });
+
       $('#tb-datatable-precios tfoot th').each(function () {
           var title = $(this).text();
           $(this).html('<input type="text" placeholder="' + title + '" />');
@@ -133,6 +213,26 @@ var Precios = {
       } );
 
       $('#idTipoEnvioMin, #idTipoEnvioMax').keyup(function () {
+          table.draw();
+      });
+
+      $('#PrecioMin, #PrecioMax').keyup(function () {
+          table.draw();
+      });
+
+      $('#PesoInicioMin, #PesoInicioMax').keyup(function () {
+          table.draw();
+      });
+
+      $('#PesoFinMin, #PesoFinMax').keyup(function () {
+          table.draw();
+      });
+
+      $('#MedidaFinMin, #MedidaFinMax').keyup(function () {
+          table.draw();
+      });
+
+      $('#DimensionFinMin, #DimensionFinMax').keyup(function () {
           table.draw();
       });
 
