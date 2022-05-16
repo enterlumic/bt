@@ -10,11 +10,33 @@ var Precios = {
     },
 
     datatable_Precios: function(){
+
+      $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+          var idTipoEnvioMin = parseInt($('#idTipoEnvioMin').val(), 10);
+          var idTipoEnvioMax = parseInt($('#idTipoEnvioMax').val(), 10);
+          var idTipoEnvio = parseFloat(data[1]) || 0;
+
+          if (
+              (isNaN(idTipoEnvioMin) && isNaN(idTipoEnvioMax)) ||
+              (isNaN(idTipoEnvioMin) && idTipoEnvio <= idTipoEnvioMax) ||
+              (idTipoEnvioMin <= idTipoEnvio && isNaN(idTipoEnvioMax)) ||
+              (idTipoEnvioMin <= idTipoEnvio && idTipoEnvio <= idTipoEnvioMax)
+          ) {
+              return true;
+          }
+          return false;
+      });
+
+      $('#tb-datatable-precios tfoot th').each(function () {
+          var title = $(this).text();
+          $(this).html('<input type="text" placeholder="' + title + '" />');
+      });
+
       var table = $('#tb-datatable-precios').DataTable( 
       {
             "stateSave": true
           , "responsive": true
-          , "serverSide": true
+          , "serverSide": false
           , "pageLength": 50
           , "scrollCollapse": true
           , "lengthMenu": [ 10, 25, 50, 75, 100 ]
@@ -24,6 +46,20 @@ var Precios = {
               ,"data": {"extra":1}
           }
           , "processing": true
+          , initComplete: function () {
+              this.api()
+                  .columns()
+                  .every(function () {
+                      var that = this;
+
+                      $('input', this.footer()).on('keyup change clear', function () {
+                            console.log("this.value", this.value);
+                          if (that.search() !== this.value) {
+                              that.search(this.value).draw();
+                          }
+                      });
+                  });
+          }
           , "language": {
               "processing": '<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i><span class="sr-only">Cargando...</span>',
               "sProcessing":     "Procesando...",
@@ -64,15 +100,25 @@ var Precios = {
                   },
                   "class": "text-center"
               },
+              // {
+              //     "targets": 0,
+              //     "visible": false,
+              // },
               {
                    "targets": 11
                   ,"render": function(data, type, row, meta ){
                     
                     // // Test
-                    return '<a data-toggle="modal" href="#modal_form_precios" id="'+row[0]+'" class="update-precios">\
-                              <i class="fa fa-pencil-square-o f-16 m-r-15"></i>\
+                    // return '<a data-toggle="modal" href="#modal_form_precios" id="'+row[0]+'" class="update-precios">\
+                    //           <i class="fa fa-pencil-square-o f-16 m-r-15"></i>\
+                    //         </a>\
+                    //         <a href="javascript:void(0);" id="'+row[0]+'" class="delete-precios" ><i class="fa fa-trash f-16"></i></a>'; 
+
+                    // Teiker
+                    return '<a data-toggle="modal" href="#modal_form_precios" id="'+row[0]+'" class="update-precios btn btn-error">\
+                              <i class="material-icons">edit</i>\
                             </a>\
-                            <a href="javascript:void(0);" id="'+row[0]+'" class="delete-precios" ><i class="fa fa-trash f-16"></i></a>'; 
+                            <a href="javascript:void(0);" id="'+row[0]+'" class="delete-precios btn btn-danger" ><i class="material-icons">delete</i></a>';
 
                     // Console
                     // return '<a data-toggle="modal" href="#modal_form_precios" id="'+row[0]+'" class="update-precios">\
@@ -86,9 +132,9 @@ var Precios = {
           ]
       } );
 
-      // setInterval( function () {
-      //     table.ajax.reload( null, false );
-      // }, 5000 );
+      $('#idTipoEnvioMin, #idTipoEnvioMax').keyup(function () {
+          table.draw();
+      });
 
       $('#tb-datatable-precios tbody').on( 'click', '.delete-precios', function () {
 
@@ -98,7 +144,7 @@ var Precios = {
 
           var id = this.id;
 
-          $.post( "precios/delete_precios",{"id_precios" : id}
+          $.post( "precios/delete_precios",{"IdPrecios" : id}
               , function( data )
               {
                   try {
@@ -123,7 +169,7 @@ var Precios = {
                             buttons: [
                               Noty.button('Deshacer', 'btn btn-success', function () {
                                   $.post( "precios/undo_delete_precios"
-                                      ,{"id_precios" : id}
+                                      ,{"IdPrecios" : id}
                                       , function( data )
                                       {
                                         if (data)
@@ -161,12 +207,12 @@ var Precios = {
       $('#tb-datatable-precios tbody').on( 'click', '.update-precios', function () {
           var id = this.id;
           document.getElementById("form_precios").reset();
-          $("#id_precios").remove();
-          $("#form_precios").prepend("<input type=\"hidden\" name=\"id_precios\" id=\"id_precios\" value="+id+">");
+          $("#IdPrecios").remove();
+          $("#form_precios").prepend("<input type=\"hidden\" name=\"IdPrecios\" id=\"IdPrecios\" value="+id+">");
 
           $("#modal_form_precios .modal-title").html("Editar precios");
 
-          $.post( "Precios/get_precios_by_id", {"id_precios" : id } , function( data )
+          $.post( "Precios/get_precios_by_id", {"IdPrecios" : id } , function( data )
           {
               try {
                   var result = JSON.stringify(result);
@@ -266,15 +312,15 @@ var Precios = {
             error.insertAfter($("#"+element.attr("name")).next("span"));
           }
           // , rules: {
-          //   IdPrecios: {
+          //   IdTipoEnvio: {
           //     required: true,
           //   }
-          //   ,IdTipoEnvio: {
+          //   ,Precio: {
           //     required: true,
           //   }
           // }
           // , messages: {
-          //     IdPrecios: {
+          //     IdTipoEnvio: {
           //         minlength: "Ingrese un RFC válido"
           //     }
           //   }
@@ -449,7 +495,7 @@ var Precios = {
 
     modalShow: function(){
       $('#modal_form_precios').on('shown.bs.modal', function (e) {
-          $('#IdPrecios', e.target).focus();
+          $('#IdTipoEnvio', e.target).focus();
       });
     },
 
@@ -465,7 +511,7 @@ var Precios = {
     AgregarNuevo: function(){
       $(document).on("click", ".agregar-precios", function(){
           document.getElementById("form_precios").reset();
-          $("#id_precios").remove();
+          $("#IdPrecios").remove();
           $("#modal_form_precios .modal-title").html("Nuevo Precios");
       });      
     },

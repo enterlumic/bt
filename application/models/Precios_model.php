@@ -19,15 +19,15 @@
 
     public function get_precios_by_id($postData)
     {
-        $postData["id_precios"]= $this->encryption->decrypt($postData["id_precios"]);
+        $postData["IdPrecios"]= $this->encryption->decrypt($postData["IdPrecios"]);
 
-        if (empty($postData["id_precios"]))
+        if (empty($postData["IdPrecios"]))
             return $this->load->response(false, array("vc_message" => "El id es altamente requerido ") );
 
-        if (!is_numeric($postData["id_precios"]))
+        if (!is_numeric($postData["IdPrecios"]))
             return $this->load->response(false, array("vc_message" => "Se espera un valor numérico en: id ") );
 
-        $sql= "CALL sp_get_precios_by_id(".intval( $postData["id_precios"] ).");";
+        $sql= "CALL sp_get_precios_by_id(".intval( $postData["IdPrecios"] ).");";
         $query = $this->db->query($sql);
         $error = $this->db->error();
 
@@ -35,8 +35,7 @@
         {
             foreach ($query->result() as $key => $value) 
             {
-                $data= array("id_precios"=> $this->encryption->encrypt($value->id) 
-                              ,"IdPrecios" => $value->IdPrecios
+                $data= array("IdPrecios"=> $this->encryption->encrypt($value->id) 
                               ,"IdTipoEnvio" => $value->IdTipoEnvio
                               ,"Precio" => $value->Precio
                               ,"PesoInicio" => $value->PesoInicio
@@ -45,11 +44,12 @@
                               ,"DimensionMaxima" => $value->DimensionMaxima
                               ,"costo_extra_kg" => $value->costo_extra_kg
                               ,"peso_maximo" => $value->peso_maximo
-                              ,"active" => $value->active
+                              ,"Activo" => $value->Activo
                               ,"Creado" => $value->Creado
                               ,"CreadoPor" => $value->CreadoPor
                               ,"Modificado" => $value->Modificado
                               ,"ModificadoPor" => $value->ModificadoPor
+                              ,"vCampo14_precios" => $value->vCampo14_precios
                               ,"vCampo15_precios" => $value->vCampo15_precios
                               ,"vCampo16_precios" => $value->vCampo16_precios
                               ,"vCampo17_precios" => $value->vCampo17_precios
@@ -65,7 +65,7 @@
                               ,"vCampo27_precios" => $value->vCampo27_precios
                               ,"vCampo28_precios" => $value->vCampo28_precios
                               ,"vCampo29_precios" => $value->vCampo29_precios
-                              ,"IdPrecios" => $value->IdPrecios
+                              ,"vCampo30_precios" => $value->vCampo30_precios
                 );
             }
 
@@ -109,7 +109,6 @@
             foreach ($result as $key => $value) 
             {
                 $data[]= array( $this->encryption->encrypt($value->id)
-                              , $value->IdPrecios
                               , $value->IdTipoEnvio
                               , $value->Precio
                               , $value->PesoInicio
@@ -118,7 +117,8 @@
                               , $value->DimensionMaxima
                               , $value->costo_extra_kg
                               , $value->peso_maximo
-                              , $value->active
+                              , $value->Activo
+                              , $value->Creado
                               , $this->encryption->encrypt($value->id)
                 );
             }
@@ -140,7 +140,6 @@
 
     public function set_precios($postData)
     {
-        $IdPrecios= isset($postData['IdPrecios']) ? $postData['IdPrecios'] : ""; 
         $IdTipoEnvio= isset($postData['IdTipoEnvio']) ? $postData['IdTipoEnvio'] : ""; 
         $Precio= isset($postData['Precio']) ? $postData['Precio'] : ""; 
         $PesoInicio= isset($postData['PesoInicio']) ? $postData['PesoInicio'] : ""; 
@@ -149,11 +148,12 @@
         $DimensionMaxima= isset($postData['DimensionMaxima']) ? $postData['DimensionMaxima'] : ""; 
         $costo_extra_kg= isset($postData['costo_extra_kg']) ? $postData['costo_extra_kg'] : ""; 
         $peso_maximo= isset($postData['peso_maximo']) ? $postData['peso_maximo'] : ""; 
-        $active= isset($postData['active']) ? $postData['active'] : ""; 
+        $Activo= isset($postData['Activo']) ? $postData['Activo'] : ""; 
         $Creado= isset($postData['Creado']) ? $postData['Creado'] : ""; 
         $CreadoPor= isset($postData['CreadoPor']) ? $postData['CreadoPor'] : ""; 
         $Modificado= isset($postData['Modificado']) ? $postData['Modificado'] : ""; 
         $ModificadoPor= isset($postData['ModificadoPor']) ? $postData['ModificadoPor'] : ""; 
+        $vCampo14_precios= isset($postData['vCampo14_precios']) ? $postData['vCampo14_precios'] : ""; 
         $vCampo15_precios= isset($postData['vCampo15_precios']) ? $postData['vCampo15_precios'] : ""; 
         $vCampo16_precios= isset($postData['vCampo16_precios']) ? $postData['vCampo16_precios'] : ""; 
         $vCampo17_precios= isset($postData['vCampo17_precios']) ? $postData['vCampo17_precios'] : ""; 
@@ -169,11 +169,10 @@
         $vCampo27_precios= isset($postData['vCampo27_precios']) ? $postData['vCampo27_precios'] : ""; 
         $vCampo28_precios= isset($postData['vCampo28_precios']) ? $postData['vCampo28_precios'] : ""; 
         $vCampo29_precios= isset($postData['vCampo29_precios']) ? $postData['vCampo29_precios'] : ""; 
-        $IdPrecios= isset($postData['IdPrecios']) ? $postData['IdPrecios'] : ""; 
+        $vCampo30_precios= isset($postData['vCampo30_precios']) ? $postData['vCampo30_precios'] : ""; 
 
         $sql  = "CALL sp_set_precios(";
-        $sql .=      $this->db->escape( trim( $IdPrecios ) );
-        $sql .= "," .$this->db->escape( trim( $IdTipoEnvio ) );
+        $sql .=      $this->db->escape( trim( $IdTipoEnvio ) );
         $sql .= "," .$this->db->escape( trim( $Precio ) );
         $sql .= "," .$this->db->escape( trim( $PesoInicio ) );
         $sql .= "," .$this->db->escape( trim( $PesoFin ) );
@@ -181,11 +180,12 @@
         $sql .= "," .$this->db->escape( trim( $DimensionMaxima ) );
         $sql .= "," .$this->db->escape( trim( $costo_extra_kg ) );
         $sql .= "," .$this->db->escape( trim( $peso_maximo ) );
-        $sql .= "," .$this->db->escape( trim( $active ) );
+        $sql .= "," .$this->db->escape( trim( $Activo ) );
         $sql .= "," .$this->db->escape( trim( $Creado ) );
         $sql .= "," .$this->db->escape( trim( $CreadoPor ) );
         $sql .= "," .$this->db->escape( trim( $Modificado ) );
         $sql .= "," .$this->db->escape( trim( $ModificadoPor ) );
+        $sql .= "," .$this->db->escape( trim( $vCampo14_precios ) );
         $sql .= "," .$this->db->escape( trim( $vCampo15_precios ) );
         $sql .= "," .$this->db->escape( trim( $vCampo16_precios ) );
         $sql .= "," .$this->db->escape( trim( $vCampo17_precios ) );
@@ -201,7 +201,7 @@
         $sql .= "," .$this->db->escape( trim( $vCampo27_precios ) );
         $sql .= "," .$this->db->escape( trim( $vCampo28_precios ) );
         $sql .= "," .$this->db->escape( trim( $vCampo29_precios ) );
-        $sql .= "," .$this->db->escape( trim( $IdPrecios ) );
+        $sql .= "," .$this->db->escape( trim( $vCampo30_precios ) );
         $sql .= ", @last_id";
         $sql .= ");";
 
@@ -221,15 +221,14 @@
 
     public function set_update_precios($postData)
     {
-        $postData["id_precios"]= $this->encryption->decrypt($postData["id_precios"]);
+        $postData["IdPrecios"]= $this->encryption->decrypt($postData["IdPrecios"]);
 
-        if (empty($postData["id_precios"]))
+        if (empty($postData["IdPrecios"]))
             return $this->load->response(false, array("vc_message" => "El id es altamente requerido ") );
 
-        if (!is_numeric($postData["id_precios"]))
+        if (!is_numeric($postData["IdPrecios"]))
             return $this->load->response(false, array("vc_message" => "Se espera un valor numérico en: id ") );
 
-        $IdPrecios= isset($postData['IdPrecios']) ? $postData['IdPrecios'] : ""; 
         $IdTipoEnvio= isset($postData['IdTipoEnvio']) ? $postData['IdTipoEnvio'] : ""; 
         $Precio= isset($postData['Precio']) ? $postData['Precio'] : ""; 
         $PesoInicio= isset($postData['PesoInicio']) ? $postData['PesoInicio'] : ""; 
@@ -238,11 +237,12 @@
         $DimensionMaxima= isset($postData['DimensionMaxima']) ? $postData['DimensionMaxima'] : ""; 
         $costo_extra_kg= isset($postData['costo_extra_kg']) ? $postData['costo_extra_kg'] : ""; 
         $peso_maximo= isset($postData['peso_maximo']) ? $postData['peso_maximo'] : ""; 
-        $active= isset($postData['active']) ? $postData['active'] : ""; 
+        $Activo= isset($postData['Activo']) ? $postData['Activo'] : ""; 
         $Creado= isset($postData['Creado']) ? $postData['Creado'] : ""; 
         $CreadoPor= isset($postData['CreadoPor']) ? $postData['CreadoPor'] : ""; 
         $Modificado= isset($postData['Modificado']) ? $postData['Modificado'] : ""; 
         $ModificadoPor= isset($postData['ModificadoPor']) ? $postData['ModificadoPor'] : ""; 
+        $vCampo14_precios= isset($postData['vCampo14_precios']) ? $postData['vCampo14_precios'] : ""; 
         $vCampo15_precios= isset($postData['vCampo15_precios']) ? $postData['vCampo15_precios'] : ""; 
         $vCampo16_precios= isset($postData['vCampo16_precios']) ? $postData['vCampo16_precios'] : ""; 
         $vCampo17_precios= isset($postData['vCampo17_precios']) ? $postData['vCampo17_precios'] : ""; 
@@ -258,11 +258,10 @@
         $vCampo27_precios= isset($postData['vCampo27_precios']) ? $postData['vCampo27_precios'] : ""; 
         $vCampo28_precios= isset($postData['vCampo28_precios']) ? $postData['vCampo28_precios'] : ""; 
         $vCampo29_precios= isset($postData['vCampo29_precios']) ? $postData['vCampo29_precios'] : ""; 
-        $IdPrecios= isset($postData['IdPrecios']) ? $postData['IdPrecios'] : ""; 
+        $vCampo30_precios= isset($postData['vCampo30_precios']) ? $postData['vCampo30_precios'] : ""; 
 
         $sql  = "CALL sp_set_update_precios(";
-        $sql .=      $this->db->escape( $postData["id_precios"] );
-        $sql .= "," .$this->db->escape( trim( $IdPrecios ) );
+        $sql .=      $this->db->escape( $postData["IdPrecios"] );
         $sql .= "," .$this->db->escape( trim( $IdTipoEnvio ) );
         $sql .= "," .$this->db->escape( trim( $Precio ) );
         $sql .= "," .$this->db->escape( trim( $PesoInicio ) );
@@ -271,11 +270,12 @@
         $sql .= "," .$this->db->escape( trim( $DimensionMaxima ) );
         $sql .= "," .$this->db->escape( trim( $costo_extra_kg ) );
         $sql .= "," .$this->db->escape( trim( $peso_maximo ) );
-        $sql .= "," .$this->db->escape( trim( $active ) );
+        $sql .= "," .$this->db->escape( trim( $Activo ) );
         $sql .= "," .$this->db->escape( trim( $Creado ) );
         $sql .= "," .$this->db->escape( trim( $CreadoPor ) );
         $sql .= "," .$this->db->escape( trim( $Modificado ) );
         $sql .= "," .$this->db->escape( trim( $ModificadoPor ) );
+        $sql .= "," .$this->db->escape( trim( $vCampo14_precios ) );
         $sql .= "," .$this->db->escape( trim( $vCampo15_precios ) );
         $sql .= "," .$this->db->escape( trim( $vCampo16_precios ) );
         $sql .= "," .$this->db->escape( trim( $vCampo17_precios ) );
@@ -291,7 +291,7 @@
         $sql .= "," .$this->db->escape( trim( $vCampo27_precios ) );
         $sql .= "," .$this->db->escape( trim( $vCampo28_precios ) );
         $sql .= "," .$this->db->escape( trim( $vCampo29_precios ) );
-        $sql .= "," .$this->db->escape( trim( $IdPrecios ) );
+        $sql .= "," .$this->db->escape( trim( $vCampo30_precios ) );
         $sql .= ", @i_internal_status";
         $sql .= ");";
 
@@ -317,7 +317,6 @@
             {
                 if ($value['vc_precio'] > 0 )
                 {
-                    $IdPrecios= isset($postData['IdPrecios']) ? $postData['IdPrecios'] : ""; 
                     $IdTipoEnvio= isset($postData['IdTipoEnvio']) ? $postData['IdTipoEnvio'] : ""; 
                     $Precio= isset($postData['Precio']) ? $postData['Precio'] : ""; 
                     $PesoInicio= isset($postData['PesoInicio']) ? $postData['PesoInicio'] : ""; 
@@ -326,11 +325,12 @@
                     $DimensionMaxima= isset($postData['DimensionMaxima']) ? $postData['DimensionMaxima'] : ""; 
                     $costo_extra_kg= isset($postData['costo_extra_kg']) ? $postData['costo_extra_kg'] : ""; 
                     $peso_maximo= isset($postData['peso_maximo']) ? $postData['peso_maximo'] : ""; 
-                    $active= isset($postData['active']) ? $postData['active'] : 
-                    $Creado= isset($postData['Creado']) ? $postData['Creado'] : ""; 
+                    $Activo= isset($postData['Activo']) ? $postData['Activo'] : ""; 
+                    $Creado= isset($postData['Creado']) ? $postData['Creado'] : 
                     $CreadoPor= isset($postData['CreadoPor']) ? $postData['CreadoPor'] : ""; 
                     $Modificado= isset($postData['Modificado']) ? $postData['Modificado'] : ""; 
                     $ModificadoPor= isset($postData['ModificadoPor']) ? $postData['ModificadoPor'] : ""; 
+                    $vCampo14_precios= isset($postData['vCampo14_precios']) ? $postData['vCampo14_precios'] : ""; 
                     $vCampo15_precios= isset($postData['vCampo15_precios']) ? $postData['vCampo15_precios'] : ""; 
                     $vCampo16_precios= isset($postData['vCampo16_precios']) ? $postData['vCampo16_precios'] : ""; 
                     $vCampo17_precios= isset($postData['vCampo17_precios']) ? $postData['vCampo17_precios'] : ""; 
@@ -346,11 +346,10 @@
                     $vCampo27_precios= isset($postData['vCampo27_precios']) ? $postData['vCampo27_precios'] : ""; 
                     $vCampo28_precios= isset($postData['vCampo28_precios']) ? $postData['vCampo28_precios'] : ""; 
                     $vCampo29_precios= isset($postData['vCampo29_precios']) ? $postData['vCampo29_precios'] : ""; 
-                    $IdPrecios= isset($postData['IdPrecios']) ? $postData['IdPrecios'] : ""; 
+                    $vCampo30_precios= isset($postData['vCampo30_precios']) ? $postData['vCampo30_precios'] : ""; 
 
                     $sql  = "CALL sp_set_importar_precios(";
                     $sql .=      intval($this->id_user);
-                    $sql .= "," .$this->db->escape( trim( $IdPrecios ) );
                     $sql .= "," .$this->db->escape( trim( $IdTipoEnvio ) );
                     $sql .= "," .$this->db->escape( trim( $Precio ) );
                     $sql .= "," .$this->db->escape( trim( $PesoInicio ) );
@@ -359,11 +358,12 @@
                     $sql .= "," .$this->db->escape( trim( $DimensionMaxima ) );
                     $sql .= "," .$this->db->escape( trim( $costo_extra_kg ) );
                     $sql .= "," .$this->db->escape( trim( $peso_maximo ) );
-                    $sql .= "," .$this->db->escape( trim( $active ) );
+                    $sql .= "," .$this->db->escape( trim( $Activo ) );
                     $sql .= "," .$this->db->escape( trim( $Creado ) );
                     $sql .= "," .$this->db->escape( trim( $CreadoPor ) );
                     $sql .= "," .$this->db->escape( trim( $Modificado ) );
                     $sql .= "," .$this->db->escape( trim( $ModificadoPor ) );
+                    $sql .= "," .$this->db->escape( trim( $vCampo14_precios ) );
                     $sql .= "," .$this->db->escape( trim( $vCampo15_precios ) );
                     $sql .= "," .$this->db->escape( trim( $vCampo16_precios ) );
                     $sql .= "," .$this->db->escape( trim( $vCampo17_precios ) );
@@ -379,7 +379,7 @@
                     $sql .= "," .$this->db->escape( trim( $vCampo27_precios ) );
                     $sql .= "," .$this->db->escape( trim( $vCampo28_precios ) );
                     $sql .= "," .$this->db->escape( trim( $vCampo29_precios ) );
-                    $sql .= "," .$this->db->escape( trim( $IdPrecios ) );                    
+                    $sql .= "," .$this->db->escape( trim( $vCampo30_precios ) );                    
                     $sql .= ", @last_id";
                     $sql .= ");";
 

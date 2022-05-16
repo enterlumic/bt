@@ -66,16 +66,16 @@ class Precios extends CI_Controller {
                 {
                     if ($key > 2 && !empty($value['A']))
                     {
-                        $arr[]= array(   "IdPrecios"  => $value['A']
-                                        ,"IdTipoEnvio"  => $value['B']
-                                        ,"Precio"  => $value['D']
-                                        ,"PesoInicio"  => $value['C']
-                                        ,"PesoFin"  => $value['E']
-                                        ,"MedidaMaxima"  => $value['F']
-                                        ,"DimensionMaxima"  => $value['G']
-                                        ,"costo_extra_kg"  => $value['H']
-                                        ,"peso_maximo"  => $value['I']
-                                        ,"active" => $value['J']
+                        $arr[]= array(   "IdTipoEnvio"  => $value['A']
+                                        ,"Precio"  => $value['B']
+                                        ,"PesoInicio"  => $value['D']
+                                        ,"PesoFin"  => $value['C']
+                                        ,"MedidaMaxima"  => $value['E']
+                                        ,"DimensionMaxima"  => $value['F']
+                                        ,"costo_extra_kg"  => $value['G']
+                                        ,"peso_maximo"  => $value['H']
+                                        ,"Activo"  => $value['I']
+                                        ,"Creado" => $value['J']
                         );
                     }
                 }
