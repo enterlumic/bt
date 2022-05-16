@@ -64,16 +64,10 @@ var Direccion_woocommerce = {
                   },
                   "class": "text-center"
               },
-              // {
-              //     "targets": 0,
-              //     "visible": false,
-              // },
-
               {
                   "targets": [2]
                 , "render": function(data, type, row, meta){
                     var contador= meta.row + 1;
-                    // var cat= data.replace("Cat_", "");
                     data = '<a href="http://'+data+'" target="_blank" class="b-b-primary text-primary">' + data + '</a>';
                     return data;
                   }
@@ -83,25 +77,10 @@ var Direccion_woocommerce = {
               {
                    "targets": 11
                   ,"render": function(data, type, row, meta ){
-                    
-                    // // Test
-                    // return '<a data-toggle="modal" href="#modal_form_direccion_woocommerce" id="'+row[0]+'" class="update-direccion_woocommerce">\
-                    //           <i class="fa fa-pencil-square-o f-16 m-r-15"></i>\
-                    //         </a>\
-                    //         <a href="javascript:void(0);" id="'+row[0]+'" class="delete-direccion_woocommerce" ><i class="fa fa-trash f-16"></i></a>'; 
-
-                    // Teiker
                     return '<a data-toggle="modal" href="#modal_form_direccion_woocommerce" id="'+row[0]+'" class="update-direccion_woocommerce btn btn-error">\
                               <i class="material-icons">edit</i>\
                             </a>\
                             <a href="javascript:void(0);" id="'+row[0]+'" class="delete-direccion_woocommerce btn btn-danger" ><i class="material-icons">delete</i></a>';
-
-                    // Console
-                    // return '<a data-toggle="modal" href="#modal_form_direccion_woocommerce" id="'+row[0]+'" class="update-direccion_woocommerce">\
-                    //           <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i>\
-                    //         </a>\
-                    //         <a href="javascript:void(0);" id="'+row[0]+'" class="delete-direccion_woocommerce" ><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>'; 
-
                   }
                   ,"class": "text-center"
               }
