@@ -1,0 +1,1 @@
+CALL sp_get_users(0,NULL,NULL,NULL,NULL,NULL,  @v_registro_total);

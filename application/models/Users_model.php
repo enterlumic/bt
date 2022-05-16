@@ -78,6 +78,8 @@
         $sql .= ",  @v_registro_total";
         $sql .=");";
 
+        file_put_contents("debug", $sql);
+
         $query=  $this->db->query($sql);
         $result= $query->result();
 
