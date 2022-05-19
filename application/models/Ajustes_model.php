@@ -73,8 +73,6 @@
         $query=  $this->db->query($sql);
         $result= $query->result();
 
-        $this->Debug_model->set_debug($this->id_user, "sp_get_ajustes", "\n" . $sql);
-
         $query->free_result();
         $query->next_result();
         $totalRecords= (array) $this->db->query("SELECT @v_registro_total;")->result()[0];

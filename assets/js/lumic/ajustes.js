@@ -75,34 +75,16 @@ var Ajustes = {
               {
                    "targets": 11
                   ,"render": function(data, type, row, meta ){
-                    
-                    // // Test
-                    // return '<a data-toggle="modal" href="#modal_form_ajustes" id="'+row[0]+'" class="update-ajustes">\
-                    //           <i class="fa fa-pencil-square-o f-16 m-r-15"></i>\
-                    //         </a>\
-                    //         <a href="javascript:void(0);" id="'+row[0]+'" class="delete-ajustes" ><i class="fa fa-trash f-16"></i></a>'; 
-
-                    // Teiker
+      
                     return '<a data-toggle="modal" href="#modal_form_ajustes" id="'+row[0]+'" class="update-ajustes btn btn-error">\
                               <i class="material-icons">edit</i>\
                             </a>\
                             <a href="javascript:void(0);" id="'+row[0]+'" class="delete-ajustes btn btn-danger" ><i class="material-icons">delete</i></a>';
-
-                    // Console
-                    // return '<a data-toggle="modal" href="#modal_form_ajustes" id="'+row[0]+'" class="update-ajustes">\
-                    //           <i class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-green"></i>\
-                    //         </a>\
-                    //         <a href="javascript:void(0);" id="'+row[0]+'" class="delete-ajustes" ><i class="feather icon-trash-2 f-w-600 f-16 text-c-red"></i></a>'; 
-
                   }
                   ,"class": "text-center"
               }
           ]
       } );
-
-      // setInterval( function () {
-      //     table.ajax.reload( null, false );
-      // }, 5000 );
 
       $('#tb-datatable-ajustes tbody').on( 'click', '.delete-ajustes', function () {
 
@@ -125,9 +107,6 @@ var Ajustes = {
                   if (data)
                   {
                       $('#tb-datatable-ajustes').DataTable().ajax.reload();
-
-                      // if ($(".noty_layout").length)
-                      //   $(".noty_layout").remove();
                       
                       var n = new Noty({
                        type: "warning",

@@ -131,6 +131,9 @@
                             <li>
                                 <a href="ajustes">Ajustes</a>
                             </li>
+                            <li>
+                                <a href="precios">Precios</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>

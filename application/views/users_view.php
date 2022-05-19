@@ -14,7 +14,7 @@
                 <table id="tb-datatable-users"class="table table-bordered table-striped table-hover js-basic-example dataTable" width="100%">
                     <thead class="thead-light">
                         <tr>
-                            <th style="width: 5%">id</th>
+                            <th >id</th>
                             <th >name</th>
                             <th >apellido</th>
                             <th >email</th>
@@ -28,22 +28,6 @@
                             <th >Acción</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                           <th style="width: 5%">id</th>
-                            <th >name</th>
-                            <th >apellido</th>
-                            <th >email</th>
-                            <th >email_verified_at</th>
-                            <th >password</th>
-                            <th >pass_crypt</th>
-                            <th >referido</th>
-                            <th >myrefcode</th>
-                            <th >admin</th>
-                            <th >telefono</th>
-                            <th >Acción</th>
-                         </tr>
-                    </tfoot>
                 </table>
             </div>
         </div>
