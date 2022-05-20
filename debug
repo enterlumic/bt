@@ -1,1 +1,1 @@
-CALL sp_get_users(0,'','0','10','0','asc',  @v_registro_total);
+CALL sp_get_users(1,'gnu87','0','10','0','asc',  @v_registro_total);
